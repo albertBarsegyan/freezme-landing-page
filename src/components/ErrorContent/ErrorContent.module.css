@@ -1,0 +1,45 @@
+.message {
+  font-weight: 700;
+  font-size: 52px;
+  line-height: 62px;
+  color: var(--color-gray-1);
+  margin-top: 2.5rem;
+}
+
+.errorWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: var(--screen-size);
+}
+
+.errorPageButton {
+  margin-top: 40px;
+}
+
+.errorIcon {
+  width: 822px;
+  max-width: 100%;
+  height: 412px;
+  max-height: 100%;
+}
+
+@media screen and (max-width: 920px) {
+  .errorIcon {
+    width: 316px;
+    height: 158px;
+  }
+
+  .message {
+    margin-top: 24px;
+    font-size: 24px;
+    line-height: 32px;
+    text-align: center;
+  }
+
+  .errorPageButton {
+    margin-top: 16px;
+  }
+
+}

@@ -1,0 +1,20 @@
+.formTitle {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+  color: var(--color-gray-1);
+  margin-bottom: 16px;
+}
+
+
+.formWrapper {
+  width: 100%;
+  padding: 24px;
+  background: #FFFFFF;
+  box-shadow: 0 100px 80px rgba(212, 212, 212, 0.07), 0 22.3363px 17.869px rgba(212, 212, 212, 0.0417275), 0 6.6501px 5.32008px rgba(212, 212, 212, 0.0282725);
+  border-radius: 8px;
+}
+
+.submit {
+  margin-top: 24px;
+}

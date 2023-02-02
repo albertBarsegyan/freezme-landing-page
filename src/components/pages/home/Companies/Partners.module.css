@@ -1,0 +1,40 @@
+.wrapper {
+  margin-bottom: 120px;
+  padding: 1.5rem 10px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.partnersWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px 88px;
+  flex-wrap: nowrap;
+  width: 100%;
+  overflow: visible;
+  animation: scrolling 30s linear infinite;
+}
+
+.partnerItem {
+  width: 200px;
+}
+
+@media screen and (max-width: 920px) {
+  .wrapper {
+    margin-bottom: 24px;
+  }
+}
+
+
+@keyframes scrolling {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    /*transform: translateX(0);*/
+    transform: translateX(calc(-10 * 288px));
+  }
+}

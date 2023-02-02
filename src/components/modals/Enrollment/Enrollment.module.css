@@ -1,0 +1,33 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: white;
+  border-radius: var(--border-radius);
+  padding: 16px 32px;
+  width: 434px;
+  height: 516px;
+  max-width: 100%;
+}
+
+.imgWrapper {
+  box-shadow: inset 0 -16px 23px rgba(255, 255, 255, 0.6);
+}
+
+.enrollHeader {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+  color: var(--text-color-dark);
+  margin-top: 26px;
+}
+
+.description {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  color: var(--text-color-light);
+  margin-top: 8px;
+  margin-bottom: 24px;
+}

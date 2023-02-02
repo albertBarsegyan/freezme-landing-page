@@ -1,0 +1,46 @@
+{
+  "routes": {
+    "home": "Home",
+    "courses": "Courses",
+    "about": "About Us",
+    "projects": "Projects",
+    "contact": "Contact Us"
+  },
+  "invalid-email": "Invalid email address",
+  "string-max-length": "Maximum MAX character",
+  "invalid-phone-number": "Phone number is invalid",
+  "enroll-button-title": "Enroll Now",
+  "menu-button-title-is-closed": "Menu",
+  "menu-button-title-is-open": "Close",
+  "donation-button-title": "Donate",
+  "copyright-text": "© Copyright Gitc. All Rights Reserved. ",
+  "read-more-button-title": "Read More",
+  "enrollment-header": "Thank You For Enrolling",
+  "enrollment-description": "We love that you’ve decided to enroll in one of our courses, we will contact you shortly. Good luck in your future classes and don’t forget to have fun.",
+  "enrollment-button-text": "Go Back",
+  "contacted-header": "Thank you for reaching out",
+  "contacted-description": "We appreciate the opportunity to assist you.",
+  "contacted-button-text": "Go Back",
+  "error-page-message": "Oops, Something Went Wrong",
+  "error-page-button-text": "Go Home",
+  "course-starting-messages": {
+    "days-count": "Starting in DAYS days \uD83D\uDD25",
+    "today": "Starts today \uD83D\uDD25"
+  },
+  "course-duration-text": "Part-Time | MONTHS months",
+  "dates": {
+    "jan": "January",
+    "feb": "February",
+    "mar": "March",
+    "apr": "April",
+    "may": "May",
+    "jun": "Jun",
+    "jul": "Jul",
+    "aug": "August",
+    "sep": "September",
+    "oct": "October",
+    "nov": "November",
+    "dec": "December"
+  }
+}
+

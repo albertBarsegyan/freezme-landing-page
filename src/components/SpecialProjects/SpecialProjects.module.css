@@ -1,0 +1,16 @@
+.wrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 40px 0;
+  flex-direction: column;
+  padding: 40px 0;
+  height: calc(var(--screen-size) - 76px);
+  overflow: auto;
+}
+
+@media screen and (max-width: 920px) {
+  .wrapper {
+    gap: 24px 0
+  }
+}

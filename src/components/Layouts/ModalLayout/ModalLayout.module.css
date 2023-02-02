@@ -1,0 +1,30 @@
+.modalLayoutWrapper {
+  position: fixed;
+  height: var(--screen-size);
+  width: 100%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 99;
+  opacity: 0;
+  backdrop-filter: blur(5px);
+}
+
+
+.contentWrapper {
+  left: 0;
+  top: 120px;
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 920px) {
+  .contentWrapper {
+    top: 60px
+  }
+
+}

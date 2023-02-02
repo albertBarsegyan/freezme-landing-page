@@ -1,0 +1,75 @@
+.footerWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 40px;
+}
+
+.copyRight {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  color: var(--text-color-dark);
+}
+
+.linkContainer {
+  display: flex;
+  justify-content: space-between;
+  max-width: 327px;
+  width: 100%;
+}
+
+
+.linkWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px 0;
+  width: 150px;
+}
+
+
+.contactTitle {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 26px;
+  color: var(--text-color-dark);
+  margin-bottom: 10px;
+}
+
+
+.iconShape {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contactInfoItem {
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  color: var(--text-color-light);
+  gap: 0 10px;
+  margin-bottom: 15px;
+}
+
+@media screen  and (max-width: 920px) {
+  .linkContainer {
+    margin: 34px 0;
+    max-width: 327px;
+    gap: 0;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+
+  .footerWrapper {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+}

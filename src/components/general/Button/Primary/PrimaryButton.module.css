@@ -1,0 +1,75 @@
+@value globalButton  from '/styles/common.module.css';
+
+.regularButton {
+  composes: globalButton;
+  border-radius: var(--border-radius);
+  padding: 12px 24px;
+  color: var(--text-color-dark);
+  border: 2px solid var(--color-gray-1);
+}
+
+
+.regularButton:hover, .regularButton:active {
+  background: var(--color-gray-1);
+  color: white;
+}
+
+
+.regularOutlineButton {
+  composes: regularButton;
+  background: var(--color-gray-1);
+  color: white;
+}
+
+.regularOutlineButton:hover, .regularOutlineButton:active {
+  background: white;
+  color: var(--color-gray-1);
+}
+
+.regularOutlineButtonDisabled {
+  composes: regularOutlineButton;
+}
+
+.regularOutlineButtonDisabled:hover, .regularOutlineButtonDisabled:active {
+  background: var(--color-gray-1);
+  color: white;
+  cursor: not-allowed;
+}
+
+
+.textPrimaryButton {
+  composes: globalButton;
+  padding: 0;
+}
+
+.textSecondaryButton {
+  composes: globalButton;
+  padding: 0 0 4px 0;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  border-bottom: 2px solid var(--primary-color-dark);
+  color: var(--text-color-dark);
+}
+
+
+.regularButtonDisabled {
+  composes: regularButton;
+  pointer-events: none;
+}
+
+.regularButtonDisabled:hover {
+  cursor: not-allowed;
+  background: transparent;
+  color: var(--text-color-dark);
+}
+
+
+.textSecondaryButtonDisabled {
+  composes: textSecondaryButton;
+  color: var(--text-color-light);
+  border-color: transparent;
+}
+
+
+

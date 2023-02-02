@@ -1,0 +1,16 @@
+{
+  "contact-form-title": "Leave us a message",
+  "contact-form-fields": {
+    "name-placeholder": "Name",
+    "email-placeholder": "Email",
+    "message-placeholder": "Tell us your question",
+    "name-label": "Name *",
+    "email-label": "Email *",
+    "message-label": "Message *",
+    "submit-button-text": "Send Message"
+  },
+  "contact-info": {
+    "working-days": "Monday - Saturday 9AM - 6PM"
+  }
+}
+

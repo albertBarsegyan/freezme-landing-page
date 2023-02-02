@@ -1,0 +1,22 @@
+.buttonWrapper {
+  display: inline-block;
+  margin-bottom: 30px;
+}
+
+.buttonWrapper:not(:last-child) {
+  margin-right: 26px;
+}
+
+.coursesWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  overflow-y: auto;
+  gap: 0 40px
+}
+
+
+/*.courseVariantButton {*/
+/*  color: inherit;*/
+/*}*/

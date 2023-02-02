@@ -1,0 +1,34 @@
+{
+  "courses-header-title": "Become a top proffesional that you were meant to be",
+  "courses-header-description": "The vision of GITC is: to decentralize the information and high-tech.",
+  "standart-courses-header": "Standart Courses",
+  "standart-courses-description": "From July 1, we start the GITC online programming courses.\nLearning programming has never been so easy and affordable.",
+  "online-courses-header": "Online Courses",
+  "online-courses-description": "From July 1, we start the GITC online programming courses.\nLearning programming has never been so easy and affordable.",
+  "course-info-title": {
+    "start-day": "Start day",
+    "duration": "Duration",
+    "price": "Price",
+    "weekly": "Weekly",
+    "level": "Level"
+  },
+  "course-faq-title": "Frequently Asked Questions",
+  "course-enroll-form-title": "Enroll to course",
+  "course-level-buttons": {
+    "beginner": "Beginner",
+    "intermediate": "Intermediate",
+    "advanced": "Advanced"
+  },
+  "course-enroll-form": {
+    "name-placeholder": "Name",
+    "name-label": "Name",
+    "email-placeholder": "Email",
+    "email-label": "Email",
+    "region-placeholder": "Region",
+    "region-label": "Region",
+    "phone-number-placeholder": "Phone number",
+    "phone-number-label": "Phone number",
+    "submit-button-text": "Enroll Now"
+  }
+}
+

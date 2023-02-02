@@ -1,0 +1,54 @@
+.sectionWrapper {
+  padding-bottom: 120px;
+}
+
+.textWrapper {
+  max-width: 831px;
+  margin-bottom: 40px;
+}
+
+.header {
+  font-weight: 700;
+  font-size: 52px;
+  line-height: 62px;
+  color: var(--text-color-dark);
+  margin-bottom: 24px;
+}
+
+.description {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+  color: var(--text-color-light);
+}
+
+
+.storyWrapper {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  overflow-x: auto;
+  gap: 0 24px;
+}
+
+@media screen and (max-width: 920px) {
+  .header {
+    font-size: 24px;
+    line-height: 32px;
+    margin-bottom: 16px;
+  }
+
+  .description {
+    font-size: 16px;
+    line-height: 26px;
+  }
+
+  .textWrapper {
+    margin-bottom: 24px;
+  }
+
+  .storyWrapper {
+    flex-direction: column;
+    gap: 24px 0;
+  }
+}

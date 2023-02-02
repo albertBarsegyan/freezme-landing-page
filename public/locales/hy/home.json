@@ -1,0 +1,20 @@
+{
+  "routes": {
+    "home": "Home",
+    "courses": "Courses",
+    "about": "About Us",
+    "projects": "Projects",
+    "contact": "Contact Us"
+  },
+  "menu-button-title-is-closed": "Menu",
+  "menu-button-title-is-open": "Close",
+  "header-title": "GYUMRI \n INFORMATION \n TECHNOLOGIES CENTER",
+  "header-description": "Since its foundation the GITC Scientific and Educational Foundation has been providing market demand specialists in the field of Information Technologies.",
+  "hero-button-title": "View Courses",
+  "courses-header": "Change your life, become a top proffesinoal that you are",
+  "courses-description": "The GITC supports the development and expansion of the labor\nmarket in the areas mentioned above, by creating attractive conditions for international and local investments.",
+  "projects-header": "Special projects !",
+  "projects-description": "The GITC supports the development and expansion of the labor\nmarket in the areas mentioned above,",
+  "stories-header": "Meet our students and here\ntheir stories",
+  "stories-description": "Gitc is an affordable, accessible way to learn UX/UI online with designers around the world. We connect you with 15 designers around the world and teach you live wherever you are with the latest real-time design tools."
+}

@@ -1,0 +1,15 @@
+.imageLoading {
+  filter: blur(10px);
+  opacity: 0;
+  transition: 0.3s linear;
+  object-fit: cover;
+  /*border-radius: var(--border-radius);*/
+}
+
+.imageSuccess {
+  /*filter: blur(0) opacity(100%);*/
+  transition: 0.3s linear;
+  object-fit: cover;
+  opacity: 1;
+  /*border-radius: var(--border-radius);*/
+}

@@ -1,0 +1,19 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+
+  margin: 16px 0;
+}
+
+
+@supports (gap: 0 8px) and (display: flex) {
+  .wrapper {
+    gap: 0 8px;
+  }
+}
+
+@supports not (( gap: 0 8px) and (display: flex)) {
+  .wrapper > * {
+    margin: 0 8px;
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "routes": {
+    "home": "Home",
+    "courses": "Courses",
+    "about": "About Us",
+    "projects": "Projects",
+    "contact": "Contact Us"
+  },
+  "menu-button-title-is-closed": "Menu",
+  "menu-button-title-is-open": "Close",
+  "header-title": "GYUMRI \n INFORMATION \n TECHNOLOGIES CENTER",
+  "header-description": "Headquartered in Armenian’s second largest city of Gyumri, GITC is fostering a culture of innovation and entrepreneurship by educating the next generation of coders and engineers.",
+  "hero-button-title": "View Courses",
+  "courses-header": "Advance your career with cutting-edge technology courses.",
+  "courses-description": "Learn coding and technology concepts through GITC and turn your dream job into a reality. With the growing demand for tech-savvy individuals, GITC offers you the tools and resources to make a successful career in the information technology industry. Don't wait, take control of your future today and make a positive impact on the world through technology!",
+  "projects-header": "Implemented Projects",
+  "projects-description": "GITC has been implementing projects to create a positive impact in various aspects of society, such as technology, education, employment, and regional development:",
+  "stories-header": "Celebrating Student Success: A Path to Inspiration and Empowerment",
+  "stories-description": "GITC students are proud to share their success stories with the world. Through the program, they have gained valuable skills, found new opportunities, and achieved their personal and professional goals. Whether it's landing their dream job, starting their own business, or simply growing as a designer, GITC has played a pivotal role in their journey. Learn here from our successful students and see the impact that GITC can have on your life."
+}

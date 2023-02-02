@@ -1,0 +1,20 @@
+.pageContent {
+  padding: 0 2.5rem;
+  background: var(--secondary-color);
+}
+
+.pageContentWithoutPadding {
+  composes: pageContent;
+  padding: 0;
+}
+
+@media screen and (max-width: 920px) {
+  .pageContent {
+    padding: 0 15px;
+  }
+
+
+  .pageContentWithoutPadding {
+    padding: 0;
+  }
+}

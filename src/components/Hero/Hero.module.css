@@ -1,0 +1,33 @@
+.wrapper {
+  padding-top: 80px;
+}
+
+.header {
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 71px;
+  color: var(--text-color-dark);
+  margin-bottom: 24px;
+  max-width: 972px;
+}
+
+.description {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+  color: var(--text-color-dark);
+  max-width: 722px;
+}
+
+@media screen and (max-width: 920px) {
+  .header {
+    font-size: 40px;
+    line-height: 47px;
+  }
+
+  .description {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+}

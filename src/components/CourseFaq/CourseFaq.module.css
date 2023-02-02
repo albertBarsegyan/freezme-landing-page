@@ -1,0 +1,77 @@
+.question {
+  margin-left: 16px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 28px;
+  color: var(--text-color-light);
+  text-align: left;
+}
+
+
+.questionActive {
+  composes: question;
+  color: var(--text-color-dark);
+}
+
+.faqButton {
+  display: flex;
+  flex-direction: row;
+  align-items: first baseline;
+  justify-content: center;
+}
+
+.faqButton:not(:last-child) {
+  margin-bottom: 24px;
+}
+
+.courseFaqWrapper {
+  margin-top: 120px;
+  padding-bottom: 120px;
+}
+
+
+.faqsHeader {
+  font-weight: 700;
+  font-size: 52px;
+  line-height: 62px;
+  color: var(--text-color-dark);
+  margin-bottom: 24px;
+}
+
+.questionAndAnswerWrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 0 40px;
+}
+
+
+.faqsWrapper {
+  width: 422px;
+  max-width: 100%;
+}
+
+.activeAnswer {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  color: var(--text-color-dark);
+}
+
+@media screen and (max-width: 768px) {
+  .faqsHeader {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .questionAndAnswerWrapper {
+    flex-direction: column;
+    gap: 20px 0;
+  }
+
+  .courseFaqWrapper {
+    margin-top: 40px;
+  }
+
+}

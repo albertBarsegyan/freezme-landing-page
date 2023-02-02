@@ -1,0 +1,41 @@
+{
+  "courses-header-title": "Become a top proffesional that you were meant to be",
+  "courses-header-description": "Vision: To transform Armenia into a high-tech hub with a powerful youth that has technological capabilities, creativity, and an innovative mindset, producing life-changing solutions and impactful ideas.",
+  "standart-courses-header": "Offline Courses",
+  "standart-courses-description": "GITC's offline courses are held in computer labs located in both Gyumri and Yerevan. These labs have been designed to provide an innovative and engaging learning environment, with state-of-the-art equipment and technology. The modern and well-equipped labs provide students with the tools and resources they need to get hands-on experience with the latest technologies.",
+  "online-courses-header": "Online Courses",
+  "online-courses-description": "GITC's online courses offer a convenient and accessible way to learn programming and tech skills. Taught by experienced professionals, they provide a comprehensive curriculum, interactive lessons, and hands-on exercises for students to develop the skills needed for success in the IT industry. Sign up today and start learning!",
+  "course-info-title": {
+    "start-day": "Start day",
+    "duration": "Duration",
+    "price": "Price",
+    "weekly": "Weekly",
+    "level": "Level"
+  },
+  "course-duration-content": {
+    "months": "months"
+  },
+  "course-price-content": {
+    "amd-per-month": "AMD per month"
+  },
+  "course-certification-info": "Certification & Interenship",
+  "course-faq-title": "Frequently Asked Questions",
+  "course-enroll-form-title": "Enroll to course",
+  "course-level-buttons": {
+    "beginner": "Beginner",
+    "intermediate": "Intermediate",
+    "advanced": "Advanced"
+  },
+  "course-enroll-form": {
+    "name-placeholder": "Name",
+    "name-label": "Name",
+    "email-placeholder": "Email",
+    "email-label": "Email",
+    "region-placeholder": "Region",
+    "region-label": "Region",
+    "phone-number-placeholder": "Phone number",
+    "phone-number-label": "Phone number",
+    "submit-button-text": "Enroll Now"
+  }
+}
+
