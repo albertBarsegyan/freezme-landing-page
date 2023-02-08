@@ -5,10 +5,8 @@ export function Favicon() {
       <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon/favicon-32x32.png" />
       <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon/favicon-16x16.png" />
       <link rel="manifest" href="/static/favicon/site.webmanifest" />
-      <link rel="mask-icon" href="/static/favicon/safari-pinned-tab.svg" color="#fff" />
-      <link rel="shortcut icon" href="/static/favicon/favicon.ico" />
-      <meta name="msapplication-TileColor" content="#ffffff" />
-      <meta name="msapplication-config" content="/static/favicon/browserconfig.xml" />
+      <link rel="mask-icon" href="/static/favicon/safari-pinned-tab.svg" color="#74e0ff" />
+      <meta name="msapplication-TileColor" content="#0a2b4b" />
       <meta name="theme-color" content="#ffffff" />
     </>
   );

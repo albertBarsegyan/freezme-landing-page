@@ -1,19 +1,22 @@
 import { ComponentWithChildrenCallback } from "../../types/component.types";
-import { PrimaryButton } from "../general/Button/Primary/PrimaryButton";
-import { useTranslation } from "next-i18next";
-import React, { LegacyRef, MutableRefObject, useEffect, useRef, useState } from "react";
+import { ButtonVariant, PrimaryButton } from "../general/Button/Primary/PrimaryButton";
+import React, { LegacyRef, MutableRefObject, useLayoutEffect, useRef, useState } from "react";
 import { useWindowSize } from "../../hooks/useWindowSize";
 import { AnimationSetting, AppMediaBreakpoints } from "../../constants/style.constants";
-import { gsap } from "gsap";
+import { gsap, Power3 } from "gsap";
+import { MenuIcon } from "../../icons/Menu.icon";
+import styles from "./Menu.module.css";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 interface MenuProps {
   menuRef: LegacyRef<HTMLDivElement> | MutableRefObject<gsap.core.Timeline | null>;
 }
 
 export function Menu({ children }: ComponentWithChildrenCallback<MenuProps>) {
-  const menuRef = useRef<null | gsap.core.Timeline>(null);
+  const menuRef = useRef<null | HTMLDivElement>(null);
   const [menuVisibility, setMenuVisibility] = useState({ animationState: false, componentState: false });
-  const { t: translate } = useTranslation("common");
   const { width } = useWindowSize();
 
   const toggleMenu = () => {
@@ -22,13 +25,9 @@ export function Menu({ children }: ComponentWithChildrenCallback<MenuProps>) {
 
   const isTabletSize = width <= AppMediaBreakpoints.Tablet;
 
-  const menuButtonText = translate(
-    menuVisibility.componentState ? "menu-button-title-is-open" : "menu-button-title-is-closed"
-  );
-
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (menuVisibility.componentState) {
-      document.body.style.overflowY = "hidden";
+      document.body.style.overflow = "hidden";
     }
 
     if (menuVisibility.animationState && isTabletSize) {
@@ -37,8 +36,21 @@ export function Menu({ children }: ComponentWithChildrenCallback<MenuProps>) {
           setMenuVisibility((prev) => ({ ...prev, componentState: true }));
         },
         duration: AnimationSetting.Duration,
-        top: 76,
+        right: "0",
         opacity: 1,
+      });
+    }
+
+    if (menuVisibility.componentState) {
+      gsap.to(menuRef.current, {
+        background: "rgba(255, 255, 255, 0.5)",
+        ease: Power3.easeIn,
+        scrollTrigger: {
+          trigger: document.body,
+          start: "88px top",
+          end: "128px top",
+          scrub: 0.5,
+        },
       });
     }
 
@@ -48,21 +60,25 @@ export function Menu({ children }: ComponentWithChildrenCallback<MenuProps>) {
           setMenuVisibility((prev) => ({ ...prev, componentState: false }));
         },
         duration: AnimationSetting.Duration,
-        top: 176,
+        right: "-100%",
         opacity: 0,
         transform: "translateY(0)",
       });
     }
 
     return () => {
-      document.body.style.overflowY = "auto";
+      document.body.style.overflow = "auto";
     };
   }, [isTabletSize, menuVisibility.componentState, menuVisibility.animationState]);
 
   return (
     <div>
       <>
-        {isTabletSize && <PrimaryButton handleClick={toggleMenu}>{menuButtonText}</PrimaryButton>}
+        {isTabletSize && (
+          <PrimaryButton className={styles.menuButton} variant={ButtonVariant.TextPrimary} handleClick={toggleMenu}>
+            <MenuIcon />
+          </PrimaryButton>
+        )}
         {(!isTabletSize || menuVisibility.componentState) && children({ menuRef })}
       </>
     </div>

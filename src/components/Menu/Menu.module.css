@@ -1,0 +1,8 @@
+.menuButton {
+  color: var(--primary-color-light);
+  transition: color .1s;
+}
+
+.menuButton:hover {
+  color: var(--primary-color-dark);
+}

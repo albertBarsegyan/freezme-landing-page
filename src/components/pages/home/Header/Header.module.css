@@ -1,62 +1,34 @@
-@value globalImage from '/styles/common.module.css';
+@value globalImage from '/src/styles/common.module.css';
 
-.imageWrapper {
-  max-width: 36rem;
-  width: 100%;
-}
-
-
-.image {
-  composes: globalImage;
-}
-
-.headerWrapper {
+.wrapper {
+  height: var(--screen-size);
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 40px 0;
-  gap: 0 64px;
-}
-
-.headerTextWrapper {
-  max-width: 45.125rem;
   width: 100%;
 }
 
-.header {
-  font-weight: 700;
-  font-size: 3.75rem;
-  line-height: 71px;
-  color: var(--text-color-dark);
+.textWrapper {
+  max-width: 710px;
 }
 
-.description {
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 32px;
-  color: var(--text-color-dark);
-  margin: 1.5rem 0;
+.headText {
+  font-weight: 800;
+  font-size: 48px;
+  line-height: 56px;
+  color: var(--primary-color-dark);
 }
 
-@media screen and (max-width: 920px) {
-  .headerWrapper {
-    flex-direction: column;
-    gap: 24px 0;
-  }
 
-  .imageWrapper {
-    max-width: 45.125rem;
-  }
-  
+.headDescription {
+  font-weight: 300;
+  font-size: 28px;
+  line-height: 39px;
+  color: var(--primary-color-dark);
+  margin-top: 24px;
+}
 
-  .header {
-    font-size: 40px;
-    line-height: 47px;
-  }
-
-  .description {
-    font-size: 18px;
-    line-height: 28px;
-  }
+.headImage {
+  width: 100%;
+  object-fit: contain;
 }

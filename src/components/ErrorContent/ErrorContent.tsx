@@ -1,4 +1,5 @@
-import { ErrorIcon } from "../../icons/Gits.icon";
+import { ErrorIcon } from "../../icons/Error.icon";
+
 import { ButtonVariant, PrimaryButton } from "../general/Button/Primary/PrimaryButton";
 import { useTranslation } from "next-i18next";
 import styles from "./ErrorContent.module.css";

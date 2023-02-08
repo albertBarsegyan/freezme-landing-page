@@ -21,7 +21,6 @@ export const LoaderIcon = () => {
       <div className={styles.ldsRingSmall}>
         <div></div>
         <div></div>
-
         <div></div>
         <div></div>
       </div>

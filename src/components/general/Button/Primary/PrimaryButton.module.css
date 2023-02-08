@@ -1,4 +1,4 @@
-@value globalButton  from '/styles/common.module.css';
+@value globalButton  from '/src/styles/common.module.css';
 
 .regularButton {
   composes: globalButton;
