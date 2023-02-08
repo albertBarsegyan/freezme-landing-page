@@ -1,10 +1,9 @@
 {
   "routes": {
-    "home": "Home",
-    "courses": "Courses",
-    "about": "About Us",
-    "projects": "Projects",
-    "contact": "Contact Us"
+    "home": "FREEZME",
+    "about": "ABOUT PRODUCT",
+    "contact": "CONSTACT US",
+    "policy": "PRIVACY POLICY"
   },
   "invalid-email": "Invalid email address",
   "string-max-length": "Maximum MAX character",

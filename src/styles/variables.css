@@ -1,0 +1,18 @@
+:root {
+  --primary-color-dark: #0A2B4B;
+  --primary-color-darker: #103C5C;
+  --text-color-dark: #1C222A;
+  --primary-color-light: #1D6599;
+  --secondary-color: #1D6599;
+  --text-color-light: #A2A8B0;
+  --text-color-white: white;
+  --color-gray-1: #05060F;
+  --color-danger: #F8413E;
+  --screen-size: 100vh;
+  --border-radius: 8px;
+  --background-color: #f0f1f3;
+  --menu-z-index: 99;
+  white-space: pre-line;
+  font-size: 16px;
+
+}

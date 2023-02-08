@@ -1,35 +1,27 @@
-import { useTranslation } from "next-i18next";
-import { ButtonVariant, PrimaryButton } from "../../../general/Button/Primary/PrimaryButton";
 import styles from "./Header.module.css";
-import { useRouter } from "next/router";
-import { RoutePath } from "../../../../constants/route.constants";
-import { ImageLoader } from "../../../ImageLoader/ImageLoader";
+import { AppStoreIcon } from "../../../../icons/AppStore.icon";
 
 export function Header() {
-  const { t: translation } = useTranslation("home");
-  const router = useRouter();
-
-  const navigateToCourses = () => router.push(RoutePath.courses());
-
   return (
     <main>
-      <div className={styles.headerWrapper}>
-        <div className={styles.headerTextWrapper}>
-          <h1 className={styles.header}>{translation("header-title")}</h1>
-          <p className={styles.description}>{translation("header-description")}</p>
+      <div className={styles.wrapper}>
+        <div className={styles.textWrapper}>
+          <h1 className={styles.headText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h1>
+          <p className={styles.headDescription}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis
+          </p>
 
-          <PrimaryButton handleClick={navigateToCourses} variant={ButtonVariant.RegularOutline}>
-            {translation("hero-button-title")}
-          </PrimaryButton>
+          <div style={{ marginTop: "40px" }}>
+            <a href={"www.google.com"}>
+              <AppStoreIcon />
+            </a>
+          </div>
         </div>
 
-        <div className={styles.imageWrapper}>
-          <ImageLoader
-            className={styles.image}
-            src={"/static/img/home/heroBg.jpg"}
-            alt={"Gyumri information technologies center"}
-          />
-        </div>
+        {/*<div>*/}
+        {/*  <AppStoreIcon />*/}
+        {/*</div>*/}
       </div>
     </main>
   );

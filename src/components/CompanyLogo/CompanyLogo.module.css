@@ -1,0 +1,22 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0 8px
+}
+
+
+.logoText {
+  font-weight: 400;
+  font-family: 'Changa One';
+  font-size: 34px;
+  line-height: 58px;
+  letter-spacing: 0.02em;
+  color: #0A2B4B;
+  background: linear-gradient(180deg, rgba(29, 74, 129, 0.6) 0%, #1D4A81 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /*background-clip: text;*/
+  text-fill-color: transparent;
+}
+

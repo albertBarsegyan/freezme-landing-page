@@ -1,4 +1,3 @@
-import { GitsIcon } from "../../icons/Gits.icon";
 import styles from "./Navbar.module.css";
 import Link from "next/link";
 
@@ -6,31 +5,43 @@ import { RoutePath } from "../../constants/route.constants";
 import { useTranslation } from "next-i18next";
 import { LinkButton } from "../general/Button/Link/LinkButton";
 import { useRouter } from "next/router";
-import { useWindowSize } from "../../hooks/useWindowSize";
 import { Menu } from "../Menu/Menu";
-import { Donation } from "../Donation/Donation";
-import { LegacyRef } from "react";
-import { AppMediaBreakpoints } from "../../constants/style.constants";
+import { LegacyRef, useLayoutEffect, useRef } from "react";
+import { CompanyLogo } from "../CompanyLogo/CompanyLogo";
+import { gsap, Power3 } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const NavbarNavigations = [
-  { nameId: "home", path: RoutePath.home() },
-  { nameId: "courses", path: RoutePath.courses() },
   { nameId: "about", path: RoutePath.about() },
-  { nameId: "projects", path: RoutePath.projects() },
   { nameId: "contact", path: RoutePath.contact() },
+  { nameId: "policy", path: RoutePath.policy() },
 ];
 
 export function Navbar() {
   const { pathname } = useRouter();
   const { t: translation } = useTranslation("common");
-  const { width } = useWindowSize();
 
-  const isTabletSize = width <= AppMediaBreakpoints.Tablet;
+  const navbarRef = useRef<null | HTMLDivElement>(null);
+
+  useLayoutEffect(() => {
+    gsap.to(navbarRef.current, {
+      background: "rgba(255, 255, 255, 0.5)",
+      duration: 0.3,
+      ease: Power3.easeIn,
+      scrollTrigger: {
+        trigger: navbarRef.current,
+        start: "top 40px",
+        scrub: 0.5,
+      },
+    });
+  }, []);
 
   return (
-    <div className={styles.wrapper}>
+    <div ref={navbarRef} className={styles.wrapper}>
       <Link href={RoutePath.home()}>
-        <GitsIcon width={isTabletSize ? 120 : 140} height={40} />
+        <CompanyLogo />
       </Link>
 
       <Menu>
@@ -40,6 +51,7 @@ export function Navbar() {
               {NavbarNavigations.map((navigation) => (
                 <Link className={styles.linkItem} key={navigation.nameId} href={navigation.path}>
                   <LinkButton
+                    className={styles.linkButton}
                     data-text={translation(`routes.${navigation.nameId}`)}
                     isActive={pathname === navigation.path}
                   >
@@ -47,11 +59,6 @@ export function Navbar() {
                   </LinkButton>
                 </Link>
               ))}
-            </div>
-
-            <div className={styles.buttonsWrapper}>
-              {/*<LanguageSelector />*/}
-              <Donation />
             </div>
           </div>
         )}

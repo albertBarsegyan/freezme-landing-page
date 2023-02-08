@@ -1,7 +1,8 @@
 .pageContent {
   padding: 0 2.5rem;
-  background: var(--secondary-color);
+  background: var(--background-color);
 }
+
 
 .pageContentWithoutPadding {
   composes: pageContent;
