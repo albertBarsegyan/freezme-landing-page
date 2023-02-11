@@ -12,7 +12,7 @@
   "menu-button-title-is-closed": "Menu",
   "menu-button-title-is-open": "Close",
   "donation-button-title": "Donate",
-  "copyright-text": "© Copyright Gitc. All Rights Reserved. ",
+  "copyright-text": "© Copyright FREEZME. All Rights Reserved. ",
   "read-more-button-title": "Read More",
   "enrollment-header": "Thank You For Enrolling",
   "enrollment-description": "We love that you’ve decided to enroll in one of our courses, we will contact you shortly. Good luck in your future classes and don’t forget to have fun.",
@@ -40,6 +40,19 @@
     "oct": "October",
     "nov": "November",
     "dec": "December"
+  },
+  "contact-form-title": "Leave us a message",
+  "contact-form-fields": {
+    "name-placeholder": "Name",
+    "email-placeholder": "Email",
+    "message-placeholder": "Tell us your question",
+    "name-label": "Name *",
+    "email-label": "Email *",
+    "message-label": "Message *",
+    "submit-button-text": "Send Message"
+  },
+  "contact-info": {
+    "working-days": "Monday - Saturday 9AM - 6PM"
   }
 }
 

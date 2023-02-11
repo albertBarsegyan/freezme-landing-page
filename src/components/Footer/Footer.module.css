@@ -4,13 +4,20 @@
   align-items: center;
   justify-content: space-between;
   padding: 20px 24px;
+  background: var(--primary-color-dark);
+  color: var(--text-color-white);
 }
+
 
 .copyRight {
   font-weight: 400;
   font-size: 16px;
   line-height: 26px;
-  color: var(--text-color-dark);
+  color: inherit;
+}
+
+.footerLinkButton {
+  color: var(--text-color-white);
 }
 
 .linkContainer {
@@ -33,7 +40,7 @@
   font-weight: 700;
   font-size: 16px;
   line-height: 26px;
-  color: var(--text-color-dark);
+  color: var(--text-color-white);
   margin-bottom: 10px;
 }
 
@@ -52,9 +59,10 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 24px;
-  color: var(--text-color-light);
+  color: var(--text-color-white);
   gap: 0 10px;
   margin-bottom: 15px;
+
 }
 
 @media screen  and (max-width: 920px) {

@@ -1,0 +1,38 @@
+.faqsContainerWrapper {
+  padding-bottom: 100px;
+}
+
+
+.faqHeader {
+  text-align: center;
+  font-size: 35px;
+  line-height: 1.8;
+  margin-bottom: 40px;
+  color: var(--primary-color-dark);
+}
+
+.faqWrapperCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+
+.faqsWrapper {
+  border-top: 1px solid #d9e5e8;
+  max-width: calc(100% - 200px);
+  width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .faqsWrapper {
+    max-width: calc(100% - 40px);
+  }
+
+  .faqHeader {
+    font-size: 32px;
+    line-height: 48px;
+  }
+
+}

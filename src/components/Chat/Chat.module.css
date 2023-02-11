@@ -1,0 +1,20 @@
+.chatWrapper {
+  position: fixed;
+  bottom: 100px;
+  right: 50px;
+}
+
+.chatButton {
+  background: transparent;
+  border: 0;
+  outline: 0;
+  width: auto;
+  cursor: pointer;
+  color: var(--primary-color-light);
+  transition: 0.2s;
+  opacity: 0.5;
+}
+
+.chatButton:hover {
+  opacity: 1;
+}

@@ -14,7 +14,6 @@ import { LoaderIcon } from "../../components/Loader/Loader";
 
 export function ContactForm() {
   const { provideModalSettings } = useModal();
-  const { t: translation } = useTranslation("contact");
   const { t: commonTranslation } = useTranslation("common");
   const [contactFormData, dispatch] = useReducer(contactFormReducer, initialFormData);
   const { mutate, isLoading } = useMutation(sendContactMessage);
@@ -76,20 +75,20 @@ export function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className={styles.formWrapper}>
-      <p className={styles.formTitle}>{translation("contact-form-title")}</p>
+      <p className={styles.formTitle}>{commonTranslation("contact-form-title")}</p>
 
       <InputField
         value={contactFormData.name.value}
         errorMessage={contactFormData.name.errorMessage}
         onChange={handleChange(ContactFormFieldName.Name)}
-        placeholder={String(translation("contact-form-fields.name-placeholder"))}
-        label={String(translation("contact-form-fields.name-label"))}
+        placeholder={String(commonTranslation("contact-form-fields.name-placeholder"))}
+        label={String(commonTranslation("contact-form-fields.name-label"))}
         type="text"
       />
 
       <InputField
-        placeholder={String(translation("contact-form-fields.email-placeholder"))}
-        label={String(translation("contact-form-fields.email-label"))}
+        placeholder={String(commonTranslation("contact-form-fields.email-placeholder"))}
+        label={String(commonTranslation("contact-form-fields.email-label"))}
         value={contactFormData.email.value}
         errorMessage={contactFormData.email.errorMessage}
         onChange={handleChange(ContactFormFieldName.Email)}
@@ -98,8 +97,8 @@ export function ContactForm() {
 
       <InputField
         variant={InputFieldVariant.TextArea}
-        placeholder={String(translation("contact-form-fields.message-placeholder"))}
-        label={String(translation("contact-form-fields.message-label"))}
+        placeholder={String(commonTranslation("contact-form-fields.message-placeholder"))}
+        label={String(commonTranslation("contact-form-fields.message-label"))}
         value={contactFormData.message.value}
         onChange={handleChange(ContactFormFieldName.Message)}
       />
@@ -110,7 +109,7 @@ export function ContactForm() {
         active={isButtonActive}
         type="submit"
       >
-        {translation("contact-form-fields.submit-button-text")} {isLoading && <LoaderIcon />}
+        {commonTranslation("contact-form-fields.submit-button-text")} {isLoading && <LoaderIcon />}
       </PrimaryButton>
     </form>
   );

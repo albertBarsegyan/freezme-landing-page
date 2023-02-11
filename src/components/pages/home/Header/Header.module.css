@@ -1,12 +1,28 @@
 @value globalImage from '/src/styles/common.module.css';
 
+.layoutOverride {
+  padding: 0 0 0 2.5rem !important;
+}
+
+
 .wrapper {
+  position: relative;
   height: var(--screen-size);
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  /*background: url(/static/img/home/backgroundMain.png) no-repeat;*/
+  /*background-size: cover;*/
+  /*background-position-x: 100%*/
 }
+
+.illustration {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
 
 .textWrapper {
   max-width: 710px;
@@ -31,4 +47,35 @@
 .headImage {
   width: 100%;
   object-fit: contain;
+}
+
+
+@media screen and (max-width: 768px) {
+
+  .layoutOverride {
+    padding: 0 2.5rem;
+  }
+
+  .wrapper {
+    background: transparent;
+    align-items: flex-start;
+    justify-content: start;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    height: auto;
+  }
+
+  .illustration {
+    display: none;
+  }
+
+  .headText {
+    font-size: 40px;
+    line-height: 47px;
+  }
+
+  .headDescription {
+    font-size: 18px;
+    line-height: 28px;
+  }
 }
