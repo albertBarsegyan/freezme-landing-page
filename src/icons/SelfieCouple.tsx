@@ -1,4 +1,18 @@
+import { useEffect, useRef } from "react";
+import gsap, { Power3 } from "gsap";
+
 export function SelfieCouple({ className }: { className: string }) {
+  const lightContext = useRef(null);
+
+  useEffect(() => {
+    gsap.to(lightContext.current, {
+      opacity: 0,
+      repeat: Infinity,
+      ease: Power3.easeIn,
+      duration: 1.2,
+    });
+  }, []);
+
   return (
     <svg className={className} viewBox="0 0 610 954" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
@@ -81,9 +95,12 @@ export function SelfieCouple({ className }: { className: string }) {
         d="M548.703 279.566C548.703 279.566 560.563 290.07 570.267 289.262C570.267 289.262 585.9 269.601 574.58 253.98C574.58 253.98 539 243.476 548.703 279.566Z"
         fill="#9E594D"
       />
-      <path d="M537.385 0L550.862 22.8932L530.916 8.88794L537.385 0Z" fill="#FFB16B" />
-      <path d="M524.177 31.2433L550.323 26.126L530.646 40.1312L524.177 31.2433Z" fill="#FFB16B" />
-      <path d="M539.003 53.0581L553.289 30.7036L549.785 54.6741L539.003 53.0581Z" fill="#FFB16B" />
+
+      <g ref={lightContext}>
+        <path d="M537.385 0L550.862 22.8932L530.916 8.88794L537.385 0Z" fill="#FFB16B" />
+        <path d="M524.177 31.2433L550.323 26.126L530.646 40.1312L524.177 31.2433Z" fill="#FFB16B" />
+        <path d="M539.003 53.0581L553.289 30.7036L549.785 54.6741L539.003 53.0581Z" fill="#FFB16B" />
+      </g>
       <path
         d="M481.048 369.524C440.616 345.823 351.666 282.261 404.766 209.541L413.931 218.429C419.591 245.901 439.538 329.394 481.048 369.524Z"
         fill="#F15C22"

@@ -23,9 +23,26 @@
   top: 0;
 }
 
+.illustrationSvg {
+  width: 1391px;
+  height: 897px
+}
+
+.backIllustration {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.backIllustrationSvg {
+  width: 849px;
+  height: 956px
+}
+
 
 .textWrapper {
   max-width: 710px;
+  z-index: 9;
 }
 
 .headText {
@@ -52,9 +69,6 @@
 
 @media screen and (max-width: 768px) {
 
-  .layoutOverride {
-    padding: 0 2.5rem;
-  }
 
   .wrapper {
     background: transparent;
@@ -78,4 +92,10 @@
     font-size: 18px;
     line-height: 28px;
   }
+
+  .backIllustrationSvg {
+    width: 400px;
+    height: 600px
+  }
+
 }

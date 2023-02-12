@@ -3,10 +3,10 @@ import type { AppProps } from "next/app";
 import { appWithTranslation } from "next-i18next";
 import { useState } from "react";
 import { QueryClient, QueryClientProvider } from "react-query";
-import { TransitionLayout } from "../src/components/Layouts/TransitionLayout/TransitionLayout";
 import ModalProvider from "../src/components/contexts/modal/Modal.context";
 import { ReactQueryDevtools } from "react-query/devtools";
 import { use100VhFix } from "../src/hooks/use100VhFix";
+import ScrollTop from "../src/components/ScrollTop";
 
 function App({ Component, pageProps }: AppProps) {
   const [queryClient] = useState(
@@ -26,12 +26,12 @@ function App({ Component, pageProps }: AppProps) {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <TransitionLayout>
-        <ModalProvider>
+      <ModalProvider>
+        <ScrollTop>
           <Component {...pageProps} />
-          <ReactQueryDevtools initialIsOpen={false} />
-        </ModalProvider>
-      </TransitionLayout>
+        </ScrollTop>
+        <ReactQueryDevtools initialIsOpen={false} />
+      </ModalProvider>
     </QueryClientProvider>
   );
 }

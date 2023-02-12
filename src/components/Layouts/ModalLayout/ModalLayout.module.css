@@ -9,13 +9,15 @@
   z-index: 9999;
   opacity: 0;
   backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .contentWrapper {
-  left: 0;
   top: 120px;
   position: absolute;
-  width: 100%;
+  width: calc(100% - 30px);
   display: flex;
   justify-content: center;
   align-items: center;

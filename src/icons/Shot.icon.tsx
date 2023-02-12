@@ -1,4 +1,18 @@
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+
 export function ShotIllustration({ className }: { className?: string }) {
+  const shotRef = useRef(null);
+
+  useEffect(() => {
+    gsap.to(shotRef.current, {
+      opacity: 0,
+      repeat: Infinity,
+
+      duration: 1,
+    });
+  }, []);
+
   return (
     <svg
       className={className}
@@ -819,12 +833,15 @@ export function ShotIllustration({ className }: { className?: string }) {
       />
       <path d="M405.453 282.371H341.149V279.825H402.9V218.57H405.453V282.371Z" fill="#263238" />
       <path d="M405.453 66.1153H402.9V4.86038H341.149V2.3208H405.453V66.1153Z" fill="#263238" />
-      <path d="M24.0942 66.1153H21.5479V2.3208H85.8113V4.86038H24.0942V66.1153Z" fill="#263238" />
-      <path d="M85.8113 282.371H21.5479V218.57H24.0942V279.825H85.8113V282.371Z" fill="#263238" />
-      <path d="M286.314 204.943H257.181V202.404H283.761V176.033H286.314V204.943Z" fill="#263238" />
-      <path d="M286.314 108.652H283.761V82.2813H257.181V79.7417H286.314V108.652Z" fill="#263238" />
-      <path d="M143.234 108.652H140.688V79.7417H169.801V82.2813H143.234V108.652Z" fill="#263238" />
-      <path d="M169.801 204.943H140.688V176.033H143.234V202.404H169.801V204.943Z" fill="#263238" />
+
+      <g ref={shotRef}>
+        <path d="M24.0942 66.1153H21.5479V2.3208H85.8113V4.86038H24.0942V66.1153Z" fill="#263238" />
+        <path d="M85.8113 282.371H21.5479V218.57H24.0942V279.825H85.8113V282.371Z" fill="#263238" />
+        <path d="M286.314 204.943H257.181V202.404H283.761V176.033H286.314V204.943Z" fill="#263238" />
+        <path d="M286.314 108.652H283.761V82.2813H257.181V79.7417H286.314V108.652Z" fill="#263238" />
+        <path d="M143.234 108.652H140.688V79.7417H169.801V82.2813H143.234V108.652Z" fill="#263238" />
+        <path d="M169.801 204.943H140.688V176.033H143.234V202.404H169.801V204.943Z" fill="#263238" />
+      </g>
       <path
         d="M390.162 27.8228H362.152V15.1514H390.162V27.8228ZM363.09 26.8746H389.191V16.1062H363.09V26.8746Z"
         fill="#263238"

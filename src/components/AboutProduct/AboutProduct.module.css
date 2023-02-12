@@ -49,23 +49,20 @@
   height: 700px;
 }
 
-.informationContent {
+.headerWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: absolute;
-  top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  gap: 0 30px;
 }
 
-.informationHeader {
+.aboutHeader {
   font-weight: 800;
   font-size: 72px;
   line-height: 100px;
-}
-
-.informationDescription {
-  font-weight: 300;
-  font-size: 36px;
-  line-height: 50px;
+  color: var(--primary-color-dark);
 }
 
 
@@ -111,6 +108,11 @@
 
   .topIllustration {
     top: -120px;
+  }
+
+  .aboutHeader {
+    font-size: 40px;
+    line-height: 52px;
   }
 
 }

@@ -1,7 +1,8 @@
 import styles from "./Header.module.css";
 import { AppStoreIcon } from "../../../../icons/AppStore.icon";
 import { ComponentLayout } from "../../../Layouts/ComponentLayout/ComponentLayout";
-import { GirlIllustration } from "../../../../icons/Girl";
+import { GirlIllustration } from "../../../../icons/Girl.illustration";
+import { BoysIllustration } from "../../../../icons/Boys.illustration";
 
 export function Header() {
   return (
@@ -9,8 +10,13 @@ export function Header() {
       <main>
         <div className={styles.wrapper}>
           <div className={styles.illustration}>
-            <GirlIllustration />
+            <GirlIllustration className={styles.illustrationSvg} />
           </div>
+
+          <div className={styles.backIllustration}>
+            <BoysIllustration className={styles.backIllustrationSvg} />
+          </div>
+
           <div className={styles.textWrapper}>
             <h1 className={styles.headText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h1>
             <p className={styles.headDescription}>
