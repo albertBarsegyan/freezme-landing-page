@@ -8,7 +8,7 @@ interface ContactMessageType {
 
 export async function sendContactMessage(body: ContactMessageType): Promise<null> {
   try {
-    const res = await axiosConfigured.post("contacts/leave_message/", body);
+    const res = await axiosConfigured.post("", body);
 
     return res.data;
   } catch (error) {

@@ -1,0 +1,9 @@
+.componentWrapper {
+  padding: 0 2.5rem;
+}
+
+@media screen and (max-width: 920px) {
+  .componentWrapper {
+    padding: 0 15px;
+  }
+}

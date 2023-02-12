@@ -1,0 +1,35 @@
+.accordionContainer {
+  border-bottom: 1px solid #d9e5e8;
+  position: relative;
+}
+
+.accordionAnswer {
+  display: block;
+  color: var(--primary-color-light);
+  overflow: hidden;
+  font-size: 1rem;
+  line-height: 2;
+}
+
+.accordionQuestion {
+  background: transparent;
+  border: 0;
+  outline: 0;
+  width: calc(100% - 20px);
+  display: block;
+  cursor: pointer;
+  font-weight: 600;
+  line-height: 1.375rem;
+  font-size: 1.125rem;
+  user-select: none;
+  color: var(--primary-color-dark);
+  text-align: left;
+  padding: 20px 0;
+}
+
+.questionWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--primary-color-dark);
+}

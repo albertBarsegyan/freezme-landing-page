@@ -14,8 +14,7 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const NavbarNavigations = [
-  { nameId: "about", path: RoutePath.about() },
-  { nameId: "contact", path: RoutePath.contact() },
+  { nameId: "about", path: `#about` },
   { nameId: "policy", path: RoutePath.policy() },
 ];
 
