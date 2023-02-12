@@ -2,6 +2,7 @@
   position: fixed;
   bottom: 100px;
   right: 50px;
+  z-index: 99999;
 }
 
 .chatButton {
@@ -13,8 +14,16 @@
   color: var(--primary-color-light);
   transition: 0.2s;
   opacity: 0.5;
+
 }
 
 .chatButton:hover {
   opacity: 1;
+}
+
+
+@media screen and (max-width: 768px) {
+  .chatButton {
+    opacity: 1;
+  }
 }

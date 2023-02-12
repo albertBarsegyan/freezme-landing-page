@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect, useLayoutEffect, useRef, useState } from "react";
+import React, { createContext, useContext, useEffect, useRef, useState } from "react";
 import { ComponentWithChildren } from "../../../types/component.types";
 import { ModalLayout } from "../../Layouts/ModalLayout/ModalLayout";
 import gsap, { Power3 } from "gsap";
@@ -57,7 +57,7 @@ export default function ModalProvider({ children }: ComponentWithChildren) {
 
   const isModalVisible = modal.settings.isShowing && modal.settings.content;
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (isModalVisible) {
       gsap.to(modalRef.current, {
         onStart: () => {

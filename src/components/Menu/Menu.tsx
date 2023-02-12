@@ -1,6 +1,6 @@
 import { ComponentWithChildrenCallback } from "../../types/component.types";
 import { ButtonVariant, PrimaryButton } from "../general/Button/Primary/PrimaryButton";
-import React, { LegacyRef, MutableRefObject, useLayoutEffect, useRef, useState } from "react";
+import React, { LegacyRef, MutableRefObject, useEffect, useRef, useState } from "react";
 import { useWindowSize } from "../../hooks/useWindowSize";
 import { AnimationSetting, AppMediaBreakpoints } from "../../constants/style.constants";
 import { gsap, Power3 } from "gsap";
@@ -25,7 +25,7 @@ export function Menu({ children }: ComponentWithChildrenCallback<MenuProps>) {
 
   const isTabletSize = width <= AppMediaBreakpoints.Tablet;
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (menuVisibility.componentState) {
       document.body.style.overflow = "hidden";
     }
