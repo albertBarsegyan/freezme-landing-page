@@ -12,8 +12,11 @@
   --screen-size: 100vh;
   --border-radius: 8px;
   --background-color: #f0f1f3;
-  --menu-z-index: 99;
+  --menu-z-index: 999;
+  --chat-z-index: 99;
+  --modal-z-index: 9999;
   white-space: pre-line;
   font-size: 16px;
+
 
 }

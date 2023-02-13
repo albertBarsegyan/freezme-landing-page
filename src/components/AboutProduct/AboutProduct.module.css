@@ -5,7 +5,9 @@
 }
 
 .cloudWrapper {
+  width: 100%;
   position: absolute;
+  overflow-x: hidden;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
@@ -107,7 +109,10 @@
   }
 
   .topIllustration {
-    top: -120px;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    top: 0;
   }
 
   .aboutHeader {
@@ -115,4 +120,10 @@
     line-height: 52px;
   }
 
+}
+
+@media screen and (max-width: 768px) {
+  .headerWrapper {
+    left: 60%;
+  }
 }

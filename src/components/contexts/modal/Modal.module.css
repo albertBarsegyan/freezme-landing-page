@@ -1,0 +1,13 @@
+.modalWrapper {
+  width: 100%;
+  max-width: 500px;
+}
+
+
+@media screen and (max-width: 768px) {
+  .modalWrapper {
+    width: 100%;
+    max-width: 100%;
+  }
+
+}

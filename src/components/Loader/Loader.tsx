@@ -59,11 +59,11 @@ export function Loader({ children, isLoading, variant = LoaderVariant.Regular }:
     }
 
     if (isLoaderVisible && variant === LoaderVariant.FullScreen) {
-      document.body.style.overflowY = "hidden";
+      document.documentElement.style.overflowY = "hidden";
     }
 
     return () => {
-      document.body.style.overflowY = "auto";
+      document.documentElement.style.overflowY = "auto";
     };
   }, [isLoaderVisible, isLoading, variant]);
 

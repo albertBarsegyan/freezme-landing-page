@@ -1,7 +1,7 @@
 @value globalImage from '/src/styles/common.module.css';
 
-.layoutOverride {
-  padding: 0 0 0 2.5rem !important;
+div > .layoutOverride {
+  padding: 0 1.25rem;
 }
 
 
@@ -67,6 +67,13 @@
 }
 
 
+@media screen and (max-width: 1200px) {
+  .illustration {
+    display: none;
+
+  }
+}
+
 @media screen and (max-width: 768px) {
 
 
@@ -79,9 +86,6 @@
     height: auto;
   }
 
-  .illustration {
-    display: none;
-  }
 
   .headText {
     font-size: 40px;

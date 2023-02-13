@@ -4,13 +4,15 @@ import { useModal } from "../contexts/modal/Modal.context";
 import { ContactForm } from "../../forms/ContactForm/ContactForm";
 
 export function Chat() {
-  const { provideModalSettings } = useModal();
+  const { provideModalSettings, settings } = useModal();
 
   const handleClickChat = () => {
-    provideModalSettings({
-      isShowing: true,
-      content: <ContactForm />,
-    });
+    if (!settings.isShowing) {
+      provideModalSettings({
+        isShowing: true,
+        content: <ContactForm />,
+      });
+    }
   };
 
   return (

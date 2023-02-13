@@ -1,5 +1,5 @@
 export const RoutePath = {
-  home: () => "/",
+  home: (path?: string) => `/${path ? path : ""}`,
   about: () => "/about",
   contact: () => "/contact",
   policy: () => "/policy",

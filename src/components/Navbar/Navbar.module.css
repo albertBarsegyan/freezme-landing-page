@@ -8,24 +8,28 @@
   box-sizing: border-box;
   position: sticky;
   top: 0;
-  z-index: 999;
+  z-index: var(--menu-z-index);
   background: var(--background-color);
   backdrop-filter: blur(6px);
-
 }
 
 
 .linksWrapper {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(100px, 1fr));
-  align-items: center;
-  justify-items: center;
+
 }
 
 .menuWrapper {
   display: flex;
   align-items: center;
+  position: relative;
   /*justify-content: center;*/
+}
+
+.cloudWrapperFirst {
+  position: absolute;
+  top: 200px;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 
@@ -47,8 +51,31 @@
   gap: 0 16px;
 }
 
-.linkButton {
-  color: var(--primary-color-dark)
+.linksWrapper .linkButton {
+  width: 160px;
+  transition: 0.1s;
+  color: var(--primary-color-dark);
+}
+
+
+.linksWrapper .linkButton:hover {
+  color: var(--primary-color-dark);
+  font-weight: 700;
+}
+
+
+.menuCopyright {
+  display: none;
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 30px);
+}
+
+.menuCopyright > p {
+  color: var(--primary-color-dark);
+  text-align: center;
 }
 
 
@@ -57,13 +84,17 @@
     padding: 8px 24px;
   }
 
+  .menuCopyright {
+    display: block;
+  }
 
   .menuWrapper {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: calc(var(--screen-size) - 88px);
     top: 88px;
-    right: -100%;
+    left: 0;
+    bottom: 0;
     justify-content: flex-start;
     align-items: flex-start;
     background: var(--background-color);
@@ -76,12 +107,21 @@
 
 
   .linksWrapper {
+    position: relative;
+    left: 50%;
+    top: 150px;
+    transform: translateX(-50%);
     display: flex;
-    margin-top: 50px;
-    margin-left: 40px;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    width: calc(100% - 30px);
+    gap: 20px 0;
   }
+
+  .linksWrapper .linkButton {
+    color: var(--primary-color-dark);
+  }
+
 
   .linkItem {
     font-weight: 400;
@@ -94,6 +134,10 @@
     margin-bottom: 36px;
   }
 
+  .linksWrapper .linkButton {
+    width: auto;
+    font-size: 32px;
+  }
 
   .buttonsWrapper {
     flex-direction: column-reverse;
@@ -101,6 +145,5 @@
     align-items: flex-start;
     gap: 36px 0;
   }
-
 
 }

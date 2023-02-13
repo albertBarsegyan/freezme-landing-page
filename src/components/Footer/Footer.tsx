@@ -63,19 +63,13 @@ export function Footer() {
 
       <div className={styles.linkContainer}>
         <div className={styles.linkWrapper}>
-          <Link href={RoutePath.about()}>
+          <Link href={RoutePath.about().replace("/", "#")}>
             <LinkButton className={styles.footerLinkButton} isActive={pathname === RoutePath.about()}>
               {translation("routes.about")}
             </LinkButton>
           </Link>
 
-          <Link href={RoutePath.contact()}>
-            <LinkButton className={styles.footerLinkButton} isActive={pathname === RoutePath.contact()}>
-              {translation("routes.contact")}
-            </LinkButton>
-          </Link>
-
-          <Link href={RoutePath.contact()}>
+          <Link href={RoutePath.policy()}>
             <LinkButton className={styles.footerLinkButton} isActive={pathname === RoutePath.contact()}>
               {translation("routes.policy")}
             </LinkButton>
