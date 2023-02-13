@@ -43,7 +43,22 @@ export function ContactDetails() {
 
 export function Footer() {
   const { t: translation } = useTranslation();
-  const { pathname } = useRouter();
+  const { pathname, push } = useRouter();
+
+  const handleAbout = async () => {
+    const scrollToBlock = () => {
+      const aboutBlock = document.getElementById(RoutePath.about().replace("/", ""));
+      if (aboutBlock) window.scrollTo({ top: aboutBlock.offsetTop - 88, behavior: "smooth" });
+    };
+
+    if (pathname !== RoutePath.home()) {
+      await push(RoutePath.home());
+      await scrollToBlock();
+      return;
+    }
+
+    scrollToBlock();
+  };
 
   return (
     <div className={styles.footerWrapper}>
@@ -63,11 +78,13 @@ export function Footer() {
 
       <div className={styles.linkContainer}>
         <div className={styles.linkWrapper}>
-          <Link href={RoutePath.about().replace("/", "#")}>
-            <LinkButton className={styles.footerLinkButton} isActive={pathname === RoutePath.about()}>
-              {translation("routes.about")}
-            </LinkButton>
-          </Link>
+          <LinkButton
+            handleClick={handleAbout}
+            className={styles.footerLinkButton}
+            isActive={pathname === RoutePath.about()}
+          >
+            {translation("routes.about")}
+          </LinkButton>
 
           <Link href={RoutePath.policy()}>
             <LinkButton className={styles.footerLinkButton} isActive={pathname === RoutePath.contact()}>
