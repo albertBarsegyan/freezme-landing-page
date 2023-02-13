@@ -61,6 +61,7 @@
 
 }
 
+
 @media screen  and (max-width: 920px) {
   .linkContainer {
     margin: 34px 0;
@@ -70,7 +71,7 @@
     width: 100%;
   }
 
-  
+
   .footerWrapper {
     flex-direction: column;
     justify-content: flex-start;
