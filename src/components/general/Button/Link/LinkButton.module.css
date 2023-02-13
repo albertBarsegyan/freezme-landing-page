@@ -2,7 +2,7 @@
   background: transparent;
   border: 0;
   outline: 0;
-  color: var(--text-color-dark);
+  color: var(--text-color-white);
   font-size: 1rem;
   cursor: pointer;
   transition: 75ms;
@@ -10,21 +10,21 @@
 
 .linkButton:hover {
   background: transparent;
-  color: var(--primary-color-dark);
+  color: var(--text-color-light);
   font-weight: 600;
-  
+
 }
 
 
 .linkButtonActive {
   composes: linkButton;
-  color: var(--primary-color-dark);
+  color: var(--text-color-light);
   font-weight: 600;
 }
 
 
 .linkButtonActive:hover, .linkButtonActive:active {
-  color: var(--primary-color-dark);
+  color: var(--text-color-light);
   font-weight: 600;
 }
 

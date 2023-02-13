@@ -1,18 +1,18 @@
 import { useEffect, useRef } from "react";
 import gsap, { Power1 } from "gsap";
 
-export function CloudIcon() {
+export function CloudIcon({ x = 300 }: { x?: number }) {
   const cloudRef = useRef(null);
 
   useEffect(() => {
     gsap.to(cloudRef.current, {
-      duration: 5,
-      x: -500,
+      duration: 3,
+      x,
       repeat: Infinity,
       ease: Power1.easeInOut,
       yoyo: true,
     });
-  }, []);
+  }, [x]);
 
   return (
     <svg ref={cloudRef} width="183" height="73" viewBox="0 0 183 73" fill="none" xmlns="http://www.w3.org/2000/svg">

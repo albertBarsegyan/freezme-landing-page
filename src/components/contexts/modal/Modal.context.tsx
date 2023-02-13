@@ -4,6 +4,7 @@ import { ModalLayout } from "../../Layouts/ModalLayout/ModalLayout";
 import gsap, { Power3 } from "gsap";
 import { AnimationSetting } from "../../../constants/style.constants";
 import useOutsideClick from "../../../hooks/useOutsideClick";
+import styles from "./Modal.module.css";
 
 interface ModalStateSettings {
   isShowing: boolean;
@@ -35,11 +36,11 @@ function useModalProvider() {
 
   useEffect(() => {
     if (settings.isShowing) {
-      document.body.style.overflowY = "hidden";
+      document.documentElement.style.overflowY = "hidden";
     }
 
     return () => {
-      document.body.style.overflowY = "auto";
+      document.documentElement.style.overflowY = "auto";
     };
   }, [settings.isShowing]);
 
@@ -61,8 +62,10 @@ export default function ModalProvider({ children }: ComponentWithChildren) {
     if (isModalVisible) {
       gsap.to(modalRef.current, {
         onStart: () => {
+          document.documentElement.style.overflowY = "hidden";
           setShowModal(true);
         },
+
         duration: AnimationSetting.Duration,
         opacity: 1,
         ease: Power3.easeInOut,
@@ -74,13 +77,13 @@ export default function ModalProvider({ children }: ComponentWithChildren) {
         ease: Power3.easeInOut,
         onComplete: () => {
           setShowModal(false);
+          document.documentElement.style.overflowY = "auto";
         },
       });
     }
   }, [isModalVisible, showModal]);
 
   useOutsideClick(modalContentRef, () => {
-    console.log("clicked");
     modal.provideModalSettings({
       isShowing: false,
     });
@@ -90,7 +93,7 @@ export default function ModalProvider({ children }: ComponentWithChildren) {
     <ModalContext.Provider value={modal}>
       {showModal && (
         <ModalLayout ref={modalRef}>
-          <div ref={modalContentRef} style={{ width: "fit-content" }}>
+          <div ref={modalContentRef} className={styles.modalWrapper}>
             {modal.settings.content}
           </div>
         </ModalLayout>

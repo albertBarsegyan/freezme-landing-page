@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 
 const ScrollTop = ({ children }: { children: ReactElement | null }) => {
   const router = useRouter();
-  const { pathname } = router;
+  const { pathname, asPath } = router;
 
   useEffect(() => {
     window.scrollTo({
@@ -14,6 +14,15 @@ const ScrollTop = ({ children }: { children: ReactElement | null }) => {
       behavior: "smooth",
     });
   }, [pathname]);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      if (asPath.includes("#")) {
+        const element = document.querySelector(asPath?.replace("/", ""));
+        if (element) element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [asPath, pathname]);
 
   return children || null;
 };

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 type IntersectionHookInit = IntersectionObserverInit;
 
@@ -13,38 +13,36 @@ const DefaultOnIntersection: OnIntersection = (isIntersecting) => {
   if (isIntersecting) return false;
 };
 
-export function useIntersection(
-  onIntersection: OnIntersection = DefaultOnIntersection,
-  options: IntersectionHookInit = DefaultOptions
-) {
+export function useIntersection({
+  elementId,
+  onIntersection = DefaultOnIntersection,
+  options = DefaultOptions,
+}: {
+  elementId: string;
+  onIntersection?: OnIntersection;
+  options?: IntersectionHookInit;
+}) {
   const [isIntersecting, setIsIntersecting] = useState(false);
-  const elemRef = useRef<null | Element | undefined>(null);
-
-  const setElem = (elem: any) => {
-    elemRef.current = elem;
-  };
 
   useEffect(() => {
-    if (!elemRef.current) return;
-    let isUnmounted = false;
+    const elementById = typeof window !== "undefined" ? document.getElementById(elementId) : null;
+    if (!elementById) return;
+
     const ob = new IntersectionObserver((entries) => {
       for (const entry of entries) {
-        if (isUnmounted) return;
-
         const isElementIntersecting = entry.isIntersecting;
-        if (onIntersection(isElementIntersecting, ob) === false) {
-          ob.disconnect();
-        }
+        // if (onIntersection(isElementIntersecting, ob) === false) {
+        //   ob.disconnect();
+        // }
         setIsIntersecting(isElementIntersecting);
       }
     }, options);
 
-    ob.observe(elemRef.current);
+    ob.observe(elementById);
     return () => {
       ob.disconnect();
-      isUnmounted = true;
     };
-  }, [onIntersection]);
+  }, [elementId, onIntersection, options]);
 
-  return [isIntersecting, setElem] as const;
+  return [isIntersecting] as const;
 }

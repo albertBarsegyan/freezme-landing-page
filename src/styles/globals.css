@@ -4,6 +4,8 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  
 }
 
 html, body, div, span, applet, object, iframe,
