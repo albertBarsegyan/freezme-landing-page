@@ -1,11 +1,7 @@
 import { PageLayout } from "../src/components/Layouts/PagetLayout/PageLayout";
 import { GetStaticProps } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import dynamic from "next/dynamic";
-
-const PolicyContent = dynamic(() => import("../src/components/PolicyContent/PolicyContent"), {
-  ssr: false,
-});
+import PolicyContent from "../src/components/PolicyContent/PolicyContent";
 
 export default function Policy() {
   return (
