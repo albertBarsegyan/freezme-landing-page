@@ -17,14 +17,26 @@ import { useWindowSize } from "../../hooks/useWindowSize";
 
 gsap.registerPlugin(ScrollTrigger);
 
+const intersectionOptions = {
+  options: {
+    threshold: 0.5,
+  },
+};
+
 export function Navbar() {
   const { width } = useWindowSize();
   const { pathname, push } = useRouter();
   const [isAboutComponentIntersecting] = useIntersection({
     elementId: RoutePath.about().replace("/", ""),
-    options: {
-      threshold: 0.5,
-    },
+    ...intersectionOptions,
+  });
+  const [isFaqComponentIntersecting] = useIntersection({
+    elementId: RoutePath.faq().replace("/", ""),
+    ...intersectionOptions,
+  });
+  const [isFeaturesComponentIntersecting] = useIntersection({
+    elementId: RoutePath.features().replace("/", ""),
+    ...intersectionOptions,
   });
 
   const { t: translation } = useTranslation("common");
@@ -32,10 +44,10 @@ export function Navbar() {
   const navbarRef = useRef<null | HTMLDivElement>(null);
   const isTabletSize = width <= AppMediaBreakpoints.Tablet;
 
-  const handleAbout = async () => {
+  const handleScrollNavigation = (routeToNavigate: string) => async () => {
     const scrollToBlock = () => {
-      const aboutBlock = document.getElementById(RoutePath.about().replace("/", ""));
-      if (aboutBlock) window.scrollTo({ top: aboutBlock.offsetTop - 88, behavior: "smooth" });
+      const componentBlock = document.getElementById(routeToNavigate.replace("/", ""));
+      if (componentBlock) window.scrollTo({ top: componentBlock.offsetTop - 108, behavior: "smooth" });
     };
 
     if (pathname !== RoutePath.home()) {
@@ -99,7 +111,18 @@ export function Navbar() {
               <LinkButton
                 handleClick={() => {
                   toggleMenu();
-                  handleAbout();
+                  handleScrollNavigation(RoutePath.features())();
+                }}
+                className={styles.linkButton}
+                isActive={isFeaturesComponentIntersecting}
+              >
+                {translation(`routes.features`)}
+              </LinkButton>
+
+              <LinkButton
+                handleClick={() => {
+                  toggleMenu();
+                  handleScrollNavigation(RoutePath.about())();
                 }}
                 className={styles.linkButton}
                 data-text={translation(`routes.about`)}
@@ -108,13 +131,20 @@ export function Navbar() {
                 {translation(`routes.about`)}
               </LinkButton>
 
-              <Link onClick={toggleMenu} href={RoutePath.policy()}>
-                <LinkButton
-                  className={styles.linkButton}
-                  data-text={translation(`routes.policy`)}
-                  isActive={pathname === RoutePath.policy()}
-                >
-                  {translation(`routes.policy`)}
+              <LinkButton
+                handleClick={() => {
+                  toggleMenu();
+                  handleScrollNavigation(RoutePath.faq())();
+                }}
+                className={styles.linkButton}
+                isActive={isFaqComponentIntersecting}
+              >
+                {translation(`routes.faq`)}
+              </LinkButton>
+
+              <Link onClick={toggleMenu} href={RoutePath.terms()}>
+                <LinkButton className={styles.linkButton} isActive={pathname === RoutePath.terms()}>
+                  {translation(`routes.terms`)}
                 </LinkButton>
               </Link>
             </div>

@@ -11,21 +11,25 @@
 .linkButton:hover {
   background: transparent;
   color: var(--text-color-light);
-  font-weight: 600;
-
+  /*font-weight: 600;*/
+  -webkit-text-stroke-width: 1px;
+  text-stroke-width: 1px;
 }
 
 
 .linkButtonActive {
   composes: linkButton;
   color: var(--text-color-light);
-  font-weight: 600;
+  /*font-weight: 600;*/
+  -webkit-text-stroke-width: 1px;
+  text-stroke-width: 1px;
 }
 
 
 .linkButtonActive:hover, .linkButtonActive:active {
   color: var(--text-color-light);
-  font-weight: 600;
+  -webkit-text-stroke-width: 1px;
+  text-stroke-width: 1px;
 }
 
 

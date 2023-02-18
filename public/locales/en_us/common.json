@@ -3,7 +3,10 @@
     "home": "FREEZME",
     "about": "ABOUT PRODUCT",
     "contact": "CONSTACT US",
-    "policy": "PRIVACY POLICY"
+    "policy": "PRIVACY POLICY",
+    "terms": "TERMS AND CONDITIONS",
+    "features": "FEATURES",
+    "faq": "FAQ"
   },
   "invalid-email": "Invalid email address",
   "string-max-length": "Maximum MAX character",

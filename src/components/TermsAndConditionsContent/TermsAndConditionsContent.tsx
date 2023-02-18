@@ -1,4 +1,4 @@
-export default function PolicyContent() {
+export default function TermsAndConditionsContent() {
   return (
     <div
       style={{ padding: "40px 20px" }}

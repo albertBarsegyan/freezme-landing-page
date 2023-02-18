@@ -2,6 +2,7 @@ import { ReactNode } from "react";
 import styles from "./Features.module.css";
 import { PeopleConversationIcon, PeopleIcon, RadarIcon, RightArrowIcon, TimeIcon } from "../../icons/Features.icons";
 import { ComponentLayout } from "../Layouts/ComponentLayout/ComponentLayout";
+import { RoutePath } from "../../constants/route.constants";
 
 export function FeatureIconWrapper({ icon }: { icon: ReactNode }) {
   return <div className={styles.iconWrapper}>{icon}</div>;
@@ -47,7 +48,7 @@ export const Feature = ({ icon, description }: { icon: JSX.Element; description:
 
 export function Features() {
   return (
-    <ComponentLayout>
+    <ComponentLayout id={RoutePath.features().replace("/", "")}>
       <div className={styles.featuresWrapper}>
         {features.map(({ icon, description, id }) => (
           <Feature key={id} icon={icon} description={description} />
