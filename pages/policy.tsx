@@ -1,11 +1,12 @@
 import { PageLayout } from "../src/components/Layouts/PagetLayout/PageLayout";
 import { GetStaticProps } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import PolicyContent from "../src/components/PolicyContent/PolicyContent";
 
 export default function Policy() {
   return (
     <PageLayout hasPadding>
-      <p style={{ padding: "10px", color: "var(--primary-color-dark)", fontSize: "54px" }}>Policy page</p>
+      <PolicyContent />
     </PageLayout>
   );
 }
