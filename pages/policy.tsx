@@ -1,11 +1,16 @@
 import { PageLayout } from "../src/components/Layouts/PagetLayout/PageLayout";
 import { GetStaticProps } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import dynamic from "next/dynamic";
+
+const PolicyContent = dynamic(() => import("../src/components/PolicyContent/PolicyContent"), {
+  ssr: false,
+});
 
 export default function Policy() {
   return (
     <PageLayout hasPadding>
-      <p style={{ padding: "10px", color: "var(--primary-color-dark)", fontSize: "54px" }}>Policy page</p>
+      <PolicyContent />
     </PageLayout>
   );
 }
