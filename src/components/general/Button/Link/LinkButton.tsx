@@ -11,9 +11,9 @@ interface LinkButtonProps {
 
 export function LinkButton({ children, handleClick, isActive, className }: LinkButtonProps) {
   const buttonStyles = classNames({
-    [className ?? ""]: Boolean(className),
     [styles.linkButton]: true,
     [styles.linkButtonActive]: isActive,
+    [className ?? ""]: true,
   });
 
   return (
