@@ -1,11 +1,4 @@
 {
-  "routes": {
-    "home": "Home",
-    "courses": "Courses",
-    "about": "About Us",
-    "projects": "Projects",
-    "contact": "Contact Us"
-  },
   "menu-button-title-is-closed": "Menu",
   "menu-button-title-is-open": "Close",
   "header-title": "GYUMRI \n INFORMATION \n TECHNOLOGIES CENTER",

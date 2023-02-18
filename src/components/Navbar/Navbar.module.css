@@ -15,7 +15,11 @@
 
 
 .linksWrapper {
-
+  /*display: grid;*/
+  /*grid-template-columns: repeat(4, minmax(0, 210px));*/
+  display: flex;
+  align-items: center;
+  gap: 0 20px;
 }
 
 .menuWrapper {
@@ -52,7 +56,7 @@
 }
 
 .linksWrapper .linkButton {
-  width: 160px;
+  /*width: 210px;*/
   transition: 0.1s;
   color: var(--primary-color-dark);
 }
@@ -60,7 +64,7 @@
 
 .linksWrapper .linkButton:hover {
   color: var(--primary-color-dark);
-  font-weight: 700;
+  -webkit-text-stroke-width: 1px;
 }
 
 

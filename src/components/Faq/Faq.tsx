@@ -1,5 +1,6 @@
 import styles from "./Faq.module.css";
 import { Accordion } from "../Accordion/Accordion";
+import { RoutePath } from "../../constants/route.constants";
 
 const Faqs = [
   {
@@ -36,7 +37,7 @@ const Faqs = [
 
 export function Faq() {
   return (
-    <div className={styles.faqsContainerWrapper}>
+    <div className={styles.faqsContainerWrapper} id={RoutePath.faq().replace("/", "")}>
       <h3 className={styles.faqHeader}>Frequently asked questions</h3>
       <div className={styles.faqWrapperCenter}>
         <div className={styles.faqsWrapper}>

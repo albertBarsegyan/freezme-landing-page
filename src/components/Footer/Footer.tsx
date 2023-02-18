@@ -4,8 +4,6 @@ import { RoutePath } from "../../constants/route.constants";
 import Link from "next/link";
 import { SocialMedia } from "../SocialMedia/SocialMedia";
 import { useTranslation } from "next-i18next";
-import { LinkButton } from "../general/Button/Link/LinkButton";
-import { useRouter } from "next/router";
 import { MailIcon, PhoneIcon, TargetIcon } from "../../icons/Contact.icon";
 import { ContactInformation } from "../../constants/information.constants";
 import { FreezMeIcon } from "../../icons/FreezMe.icon";
@@ -43,22 +41,22 @@ export function ContactDetails() {
 
 export function Footer() {
   const { t: translation } = useTranslation();
-  const { pathname, push } = useRouter();
+  // const { pathname, push } = useRouter();
 
-  const handleAbout = async () => {
-    const scrollToBlock = () => {
-      const aboutBlock = document.getElementById(RoutePath.about().replace("/", ""));
-      if (aboutBlock) window.scrollTo({ top: aboutBlock.offsetTop - 88, behavior: "smooth" });
-    };
-
-    if (pathname !== RoutePath.home()) {
-      await push(RoutePath.home());
-      await scrollToBlock();
-      return;
-    }
-
-    scrollToBlock();
-  };
+  // const handleAbout = async () => {
+  //   const scrollToBlock = () => {
+  //     const aboutBlock = document.getElementById(RoutePath.about().replace("/", ""));
+  //     if (aboutBlock) window.scrollTo({ top: aboutBlock.offsetTop - 88, behavior: "smooth" });
+  //   };
+  //
+  //   if (pathname !== RoutePath.home()) {
+  //     await push(RoutePath.home());
+  //     await scrollToBlock();
+  //     return;
+  //   }
+  //
+  //   scrollToBlock();
+  // };
 
   return (
     <div className={styles.footerWrapper}>
@@ -77,21 +75,7 @@ export function Footer() {
       </div>
 
       <div className={styles.linkContainer}>
-        <div className={styles.linkWrapper}>
-          <LinkButton
-            handleClick={handleAbout}
-            className={styles.footerLinkButton}
-            isActive={pathname === RoutePath.about()}
-          >
-            {translation("routes.about")}
-          </LinkButton>
-
-          <Link href={RoutePath.policy()}>
-            <LinkButton className={styles.footerLinkButton} isActive={pathname === RoutePath.contact()}>
-              {translation("routes.policy")}
-            </LinkButton>
-          </Link>
-        </div>
+        <div className={styles.linkWrapper}></div>
       </div>
 
       <div>
