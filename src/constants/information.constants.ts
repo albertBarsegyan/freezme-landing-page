@@ -1,6 +1,5 @@
 export const ContactInformation = {
-  phone: "(+374) 00 00 00",
-  email: "info@example.com",
-  place1: "Somewhere 1",
-  place2: "Somewhere 2",
+  phone: "(+374) 96 41 41 03",
+  email: "info@freezme.net",
+  place1: "Armenia Yerevan",
 };

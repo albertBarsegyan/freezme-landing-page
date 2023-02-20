@@ -7,6 +7,7 @@ import ModalProvider from "../src/components/contexts/modal/Modal.context";
 import { ReactQueryDevtools } from "react-query/devtools";
 import { use100VhFix } from "../src/hooks/use100VhFix";
 import ScrollTop from "../src/components/ScrollTop";
+import MenuProvider from "../src/components/contexts/menu/Menu.context";
 
 function App({ Component, pageProps }: AppProps) {
   const [queryClient] = useState(
@@ -26,12 +27,14 @@ function App({ Component, pageProps }: AppProps) {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <ModalProvider>
-        <ScrollTop>
-          <Component {...pageProps} />
-        </ScrollTop>
-        <ReactQueryDevtools initialIsOpen={false} />
-      </ModalProvider>
+      <MenuProvider>
+        <ModalProvider>
+          <ScrollTop>
+            <Component {...pageProps} />
+          </ScrollTop>
+          <ReactQueryDevtools initialIsOpen={false} />
+        </ModalProvider>
+      </MenuProvider>
     </QueryClientProvider>
   );
 }

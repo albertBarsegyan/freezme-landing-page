@@ -40,17 +40,22 @@ export function AboutProduct() {
 
         <div className={styles.headerWrapper}>
           <p ref={headerRef} className={styles.aboutHeader}>
-            Story
+            About
           </p>
         </div>
 
         <div className={styles.wrapper}>
           <p className={styles.description}>
-            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-            nulla pariatur.dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
-            ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-            dolore eu fugiat nulla pariatur.
+            <strong>FREEZME</strong> is a unique application that allows you to freeze photos and videos, revealing them
+            at a specific date chosen by the user. The application is designed to be user-friendly and straightforward.
+            After downloading the application, the user simply takes photos and videos, which are then stored in a
+            digital
+            {"freezer"}. The user can choose the date when they want their photos and videos to be revealed, and the
+            application automatically stores and locks the media in the freezer until that date arrives. Once the
+            designated date arrives, the application will automatically thaw the photos and videos, allowing the user to
+            relive their memories and emotions. The user can choose to receive notifications when their photos and
+            videos are ready to be viewed, creating a sense of anticipation and excitement as they wait for the big
+            reveal.
           </p>
         </div>
       </div>

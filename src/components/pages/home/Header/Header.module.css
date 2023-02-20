@@ -1,9 +1,5 @@
 @value globalImage from '/src/styles/common.module.css';
 
-div > .layoutOverride {
-  padding: 0 1.25rem;
-}
-
 
 .wrapper {
   position: relative;
@@ -39,9 +35,8 @@ div > .layoutOverride {
   height: 956px
 }
 
-
 .textWrapper {
-  max-width: 710px;
+  max-width: 850px;
   z-index: 9;
 }
 
@@ -55,8 +50,8 @@ div > .layoutOverride {
 
 .headDescription {
   font-weight: 300;
-  font-size: 28px;
-  line-height: 39px;
+  font-size: 24px;
+  line-height: 38px;
   color: var(--primary-color-dark);
   margin-top: 24px;
 }
@@ -75,6 +70,11 @@ div > .layoutOverride {
 }
 
 @media screen and (max-width: 768px) {
+
+
+  div > .layoutOverride {
+    padding: 0 1.25rem;
+  }
 
 
   .wrapper {

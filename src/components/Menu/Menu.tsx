@@ -1,29 +1,27 @@
 import { ComponentWithChildrenCallback } from "../../types/component.types";
 import { ButtonVariant, PrimaryButton } from "../general/Button/Primary/PrimaryButton";
-import React, { LegacyRef, MutableRefObject, useEffect, useRef, useState } from "react";
+import React, { LegacyRef, MutableRefObject, useEffect, useRef } from "react";
 import { useWindowSize } from "../../hooks/useWindowSize";
 import { AnimationSetting, AppMediaBreakpoints } from "../../constants/style.constants";
-import { gsap, Power3 } from "gsap";
+import { gsap } from "gsap";
 import { MenuIcon } from "../../icons/Menu.icon";
 import styles from "./Menu.module.css";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { CloseIcon } from "../../icons/Close.icon";
+import { MenuInitialState, useMenu } from "../contexts/menu/Menu.context";
+import { useRouter } from "next/router";
 
 gsap.registerPlugin(ScrollTrigger);
 
 interface MenuProps {
   menuRef: LegacyRef<HTMLDivElement> | MutableRefObject<gsap.core.Timeline | null>;
-  toggleMenu: () => void;
 }
 
 export function Menu({ children }: ComponentWithChildrenCallback<MenuProps>) {
   const menuRef = useRef<null | HTMLDivElement>(null);
-  const [menuVisibility, setMenuVisibility] = useState({ animationState: false, componentState: false });
+  const { menuVisibility, setMenuVisibility, toggleMenu } = useMenu();
   const { width } = useWindowSize();
-
-  const toggleMenu = () => {
-    setMenuVisibility((prev) => ({ ...prev, animationState: !prev.animationState }));
-  };
+  const { pathname } = useRouter();
 
   const isTabletSize = width <= AppMediaBreakpoints.Tablet;
 
@@ -39,19 +37,6 @@ export function Menu({ children }: ComponentWithChildrenCallback<MenuProps>) {
       });
     }
 
-    if (menuVisibility.componentState) {
-      gsap.to(menuRef.current, {
-        background: "rgba(255, 255, 255, 0.5)",
-        ease: Power3.easeIn,
-        scrollTrigger: {
-          trigger: document.documentElement,
-          start: "88px top",
-          end: "128px top",
-          scrub: 0.5,
-        },
-      });
-    }
-
     if (!menuVisibility.animationState && isTabletSize) {
       gsap.to(menuRef.current, {
         onComplete: () => {
@@ -62,7 +47,15 @@ export function Menu({ children }: ComponentWithChildrenCallback<MenuProps>) {
         opacity: 0,
       });
     }
+
+    return () => {
+      document.documentElement.style.overflowY = "auto";
+    };
   }, [isTabletSize, menuVisibility.componentState, menuVisibility.animationState]);
+
+  useEffect(() => {
+    setMenuVisibility(MenuInitialState);
+  }, [pathname, setMenuVisibility]);
 
   return (
     <>
@@ -71,7 +64,7 @@ export function Menu({ children }: ComponentWithChildrenCallback<MenuProps>) {
           {menuVisibility.animationState ? <CloseIcon /> : <MenuIcon />}
         </PrimaryButton>
       )}
-      {(!isTabletSize || menuVisibility.componentState) && children({ menuRef, toggleMenu })}
+      {(!isTabletSize || menuVisibility.componentState) && children({ menuRef })}
     </>
   );
 }
