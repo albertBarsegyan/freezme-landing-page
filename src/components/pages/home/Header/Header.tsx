@@ -1,7 +1,6 @@
 import styles from "./Header.module.css";
 import { AppStoreIcon } from "../../../../icons/AppStore.icon";
 import { ComponentLayout } from "../../../Layouts/ComponentLayout/ComponentLayout";
-import { GirlIllustration } from "../../../../icons/Girl.illustration";
 import { BoysIllustration } from "../../../../icons/Boys.illustration";
 
 export function Header() {
@@ -9,9 +8,9 @@ export function Header() {
     <ComponentLayout className={styles.layoutOverride}>
       <main>
         <div className={styles.wrapper}>
-          <div className={styles.illustration}>
-            <GirlIllustration className={styles.illustrationSvg} />
-          </div>
+          {/*<div className={styles.illustration}>*/}
+          {/*  <GirlIllustration className={styles.illustrationSvg} />*/}
+          {/*</div>*/}
 
           <div className={styles.backIllustration}>
             <BoysIllustration className={styles.backIllustrationSvg} />
@@ -20,8 +19,10 @@ export function Header() {
           <div className={styles.textWrapper}>
             <h1 className={styles.headText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h1>
             <p className={styles.headDescription}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Ut enim ad minim veniam, quis
+              FREEZME allows users to freeze photos and videos, revealing them on a specific date of their choosing is a
+              unique and exciting concept. By offering personalization, anticipation, and the ability to relive precious
+              moments, this application has the potential to become a favorite for those who want to cherish and
+              remember their memories in a unique and meaningful way.
             </p>
 
             <div style={{ marginTop: "40px" }}>

@@ -3,10 +3,12 @@ import { RoutePath } from "../../constants/route.constants";
 
 import Link from "next/link";
 import { SocialMedia } from "../SocialMedia/SocialMedia";
-import { useTranslation } from "next-i18next";
 import { MailIcon, PhoneIcon, TargetIcon } from "../../icons/Contact.icon";
 import { ContactInformation } from "../../constants/information.constants";
 import { FreezMeIcon } from "../../icons/FreezMe.icon";
+import { LinksWrapper } from "../LinksWrapper/LinksWrapper";
+import { useTranslation } from "next-i18next";
+import { LinkButton } from "../general/Button/Link/LinkButton";
 
 export function ContactDetails() {
   return (
@@ -29,34 +31,12 @@ export function ContactDetails() {
         </div>
         <span>{ContactInformation.place1}</span>
       </div>
-      <div className={styles.contactInfoItem}>
-        <div className={styles.iconShape}>
-          <TargetIcon />
-        </div>
-        <span>{ContactInformation.place2}</span>
-      </div>
     </div>
   );
 }
 
 export function Footer() {
-  const { t: translation } = useTranslation();
-  // const { pathname, push } = useRouter();
-
-  // const handleAbout = async () => {
-  //   const scrollToBlock = () => {
-  //     const aboutBlock = document.getElementById(RoutePath.about().replace("/", ""));
-  //     if (aboutBlock) window.scrollTo({ top: aboutBlock.offsetTop - 88, behavior: "smooth" });
-  //   };
-  //
-  //   if (pathname !== RoutePath.home()) {
-  //     await push(RoutePath.home());
-  //     await scrollToBlock();
-  //     return;
-  //   }
-  //
-  //   scrollToBlock();
-  // };
+  const { t: translation } = useTranslation("common");
 
   return (
     <div className={styles.footerWrapper}>
@@ -75,7 +55,11 @@ export function Footer() {
       </div>
 
       <div className={styles.linkContainer}>
-        <div className={styles.linkWrapper}></div>
+        <LinksWrapper forFooter>
+          <Link target={"_blank"} href={"static/resource/privacy_policy.html"}>
+            <LinkButton isActive={false}>{translation("routes.policy")}</LinkButton>
+          </Link>
+        </LinksWrapper>
       </div>
 
       <div>
