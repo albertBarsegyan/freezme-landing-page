@@ -23,7 +23,6 @@ export const intersectionOptions = {
 export function Navbar() {
   const { closeMenu } = useMenu();
   const { pathname, push } = useRouter();
-  // const { width } = useWindowSize();
 
   const { t: translation } = useTranslation("common");
 
