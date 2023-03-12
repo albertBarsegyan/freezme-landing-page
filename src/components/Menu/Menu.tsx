@@ -8,7 +8,7 @@ import { MenuIcon } from "../../icons/Menu.icon";
 import styles from "./Menu.module.css";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { CloseIcon } from "../../icons/Close.icon";
-import { MenuInitialState, useMenu } from "../contexts/menu/Menu.context";
+import { MenuAnimationState, MenuInitialState, useMenu } from "../contexts/menu/Menu.context";
 import { useRouter } from "next/router";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -26,32 +26,34 @@ export function Menu({ children }: ComponentWithChildrenCallback<MenuProps>) {
   const isTabletSize = width <= AppMediaBreakpoints.Tablet;
 
   useEffect(() => {
-    if (menuVisibility.animationState && isTabletSize) {
-      gsap.to(menuRef.current, {
-        onStart: () => {
-          document.documentElement.style.overflowY = "hidden";
-          setMenuVisibility((prev) => ({ ...prev, componentState: true }));
-        },
-        duration: AnimationSetting.Duration,
-        opacity: 1,
-      });
-    }
+    if (isTabletSize) {
+      if (menuVisibility.animationState === MenuAnimationState.Start) {
+        gsap.to(menuRef.current, {
+          onStart: () => {
+            document.documentElement.style.overflowY = "hidden";
+            setMenuVisibility((prev) => ({ ...prev, componentState: true }));
+          },
+          duration: AnimationSetting.Duration,
+          opacity: 1,
+        });
+      }
 
-    if (!menuVisibility.animationState && isTabletSize) {
-      gsap.to(menuRef.current, {
-        onComplete: () => {
-          document.documentElement.style.overflowY = "auto";
-          setMenuVisibility((prev) => ({ ...prev, componentState: false }));
-        },
-        duration: AnimationSetting.Duration,
-        opacity: 0,
-      });
+      if (menuVisibility.animationState === MenuAnimationState.End) {
+        gsap.to(menuRef.current, {
+          onComplete: () => {
+            document.documentElement.style.overflowY = "auto";
+            setMenuVisibility((prev) => ({ ...prev, componentState: false }));
+          },
+          duration: AnimationSetting.Duration,
+          opacity: 0,
+        });
+      }
     }
 
     return () => {
       document.documentElement.style.overflowY = "auto";
     };
-  }, [isTabletSize, menuVisibility.componentState, menuVisibility.animationState]);
+  }, [pathname, menuVisibility.animationState, menuVisibility.componentState, setMenuVisibility]);
 
   useEffect(() => {
     setMenuVisibility(MenuInitialState);
@@ -61,7 +63,7 @@ export function Menu({ children }: ComponentWithChildrenCallback<MenuProps>) {
     <>
       {isTabletSize && (
         <PrimaryButton className={styles.menuButton} variant={ButtonVariant.TextPrimary} handleClick={toggleMenu}>
-          {menuVisibility.animationState ? <CloseIcon /> : <MenuIcon />}
+          {menuVisibility.animationState === MenuAnimationState.Start ? <CloseIcon /> : <MenuIcon />}
         </PrimaryButton>
       )}
       {(!isTabletSize || menuVisibility.componentState) && children({ menuRef })}
