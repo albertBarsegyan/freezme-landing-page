@@ -5,12 +5,13 @@ import { useTranslation } from "next-i18next";
 import { LinkButton } from "../general/Button/Link/LinkButton";
 import { useRouter } from "next/router";
 import { Menu } from "../Menu/Menu";
-import { LegacyRef, useEffect, useRef } from "react";
+import { LegacyRef, useRef } from "react";
 import { CompanyLogo } from "../CompanyLogo/CompanyLogo";
-import { gsap, Power3 } from "gsap";
+import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { useMenu } from "../contexts/menu/Menu.context";
+
 import { LinksWrapper } from "../LinksWrapper/LinksWrapper";
+import { useMenu } from "../contexts/menu/Menu.context";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -48,20 +49,20 @@ export function Navbar() {
       }, 500);
     });
   };
-
-  useEffect(() => {
-    gsap.to(navbarRef.current, {
-      background: "rgba(255, 255, 255, 0.5)",
-      duration: 0.3,
-      opacity: 1,
-      ease: Power3.easeIn,
-      scrollTrigger: {
-        trigger: navbarRef.current,
-        start: "top 40px",
-        scrub: 0.5,
-      },
-    });
-  }, []);
+  //
+  // useEffect(() => {
+  //   gsap.to(navbarRef.current, {
+  //     background: "rgba(255, 255, 255, 0.5)",
+  //     duration: 0.3,
+  //     opacity: 1,
+  //     ease: Power3.easeIn,
+  //     scrollTrigger: {
+  //       trigger: navbarRef.current,
+  //       start: "top 40px",
+  //       scrub: 0.5,
+  //     },
+  //   });
+  // }, []);
 
   return (
     <div ref={navbarRef} className={styles.wrapper}>

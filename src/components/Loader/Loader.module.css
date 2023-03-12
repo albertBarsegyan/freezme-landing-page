@@ -76,10 +76,10 @@
   width: 16px;
   height: 16px;
   margin: 2px;
-  border: 2px solid var(--primary-color-dark);
+  border: 2px solid white;
   border-radius: 50%;
   animation: loading 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-  border-color: var(--primary-color-dark) transparent transparent transparent;
+  border-color: white transparent transparent transparent;
 }
 
 .ldsRingSmall div:nth-child(1) {

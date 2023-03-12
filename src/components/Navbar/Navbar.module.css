@@ -106,7 +106,7 @@
     z-index: var(--menu-z-index);
     flex-direction: column;
     gap: 36px 0;
-    opacity: 0;
+    /*opacity: 0;*/
     background-color: rgba(255, 255, 255, 0.5)
   }
 
