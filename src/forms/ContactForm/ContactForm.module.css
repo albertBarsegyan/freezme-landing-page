@@ -30,6 +30,7 @@
 .submit:hover {
   background: var(--primary-color-dark);
   border: 1px solid var(--primary-color-dark);
+  color: white;
 }
 
 @media screen and (max-width: 920px) {
