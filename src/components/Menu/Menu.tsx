@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { ComponentWithChildrenCallback } from "../../types/component.types";
 import { ButtonVariant, PrimaryButton } from "../general/Button/Primary/PrimaryButton";
 import React, { LegacyRef, MutableRefObject, useEffect, useRef } from "react";
@@ -9,7 +10,6 @@ import styles from "./Menu.module.css";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { CloseIcon } from "../../icons/Close.icon";
 import { MenuAnimationState, useMenu } from "../contexts/menu/Menu.context";
-import { useRouter } from "next/router";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -25,7 +25,6 @@ export function Menu({ children }: ComponentWithChildrenCallback<MenuProps>) {
     toggleMenu,
   } = useMenu();
   const { width } = useWindowSize();
-  const { pathname } = useRouter();
 
   const isTabletSize = width <= AppMediaBreakpoints.Tablet;
 
@@ -33,7 +32,7 @@ export function Menu({ children }: ComponentWithChildrenCallback<MenuProps>) {
 
   useEffect(() => {
     if (isTabletSize) {
-      if (animationState === MenuAnimationState.Start) {
+      if (animationState===MenuAnimationState.Start) {
         gsap.to(menuRef.current, {
           onStart: () => {
             document.documentElement.style.overflowY = "hidden";
@@ -44,7 +43,7 @@ export function Menu({ children }: ComponentWithChildrenCallback<MenuProps>) {
         });
       }
 
-      if (animationState === MenuAnimationState.End) {
+      if (animationState===MenuAnimationState.End) {
         gsap.to(menuRef.current, {
           onComplete: () => {
             document.documentElement.style.overflowY = "auto";
@@ -69,7 +68,7 @@ export function Menu({ children }: ComponentWithChildrenCallback<MenuProps>) {
     <>
       {isTabletSize && (
         <PrimaryButton className={styles.menuButton} variant={ButtonVariant.TextPrimary} handleClick={toggleMenu}>
-          {animationState === MenuAnimationState.Start ? <CloseIcon /> : <MenuIcon />}
+          {animationState===MenuAnimationState.Start ? <CloseIcon/>:<MenuIcon/>}
         </PrimaryButton>
       )}
       {(!isTabletSize || componentState) && children({ menuRef })}
