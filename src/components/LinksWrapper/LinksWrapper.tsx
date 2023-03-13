@@ -9,11 +9,16 @@ import { useMenu } from "../contexts/menu/Menu.context";
 import { useTranslation } from "next-i18next";
 import classNames from "classnames";
 import { ReactNode } from "react";
+import { useWindowSize } from "../../hooks/useWindowSize";
+import { AppMediaBreakpoints } from "../../constants/style.constants";
 
 export function LinksWrapper({ forFooter = false, children }: { forFooter?: boolean; children?: ReactNode }) {
   const { t: translation } = useTranslation();
   const { pathname, push } = useRouter();
   const { toggleMenu } = useMenu();
+  const { width } = useWindowSize();
+
+  const isTabletSize = width <= AppMediaBreakpoints.Tablet;
 
   const [isAboutComponentIntersecting] = useIntersection({
     elementId: RoutePath.about().replace("/", ""),
@@ -43,6 +48,10 @@ export function LinksWrapper({ forFooter = false, children }: { forFooter?: bool
     scrollToBlock();
   };
 
+  const handleTermsClick = () => {
+    if (isTabletSize) toggleMenu();
+  };
+
   const linkWrapperStyles = classNames({
     [styles.linkWrapper]: !forFooter,
     [styles.footerLinkWrapper]: forFooter,
@@ -56,7 +65,7 @@ export function LinksWrapper({ forFooter = false, children }: { forFooter?: bool
     <div className={linkWrapperStyles}>
       <LinkButton
         handleClick={() => {
-          toggleMenu();
+          if (isTabletSize) toggleMenu();
           handleScrollNavigation(RoutePath.features())();
         }}
         className={linkButtonStyles}
@@ -67,7 +76,7 @@ export function LinksWrapper({ forFooter = false, children }: { forFooter?: bool
 
       <LinkButton
         handleClick={() => {
-          toggleMenu();
+          if (isTabletSize) toggleMenu();
           handleScrollNavigation(RoutePath.about())();
         }}
         className={linkButtonStyles}
@@ -79,7 +88,7 @@ export function LinksWrapper({ forFooter = false, children }: { forFooter?: bool
 
       <LinkButton
         handleClick={() => {
-          toggleMenu();
+          if (isTabletSize) toggleMenu();
           handleScrollNavigation(RoutePath.faq())();
         }}
         className={linkButtonStyles}
@@ -88,7 +97,7 @@ export function LinksWrapper({ forFooter = false, children }: { forFooter?: bool
         {translation(`routes.faq`)}
       </LinkButton>
 
-      <Link onClick={toggleMenu} href={RoutePath.terms()}>
+      <Link onClick={handleTermsClick} href={RoutePath.terms()}>
         <LinkButton className={linkButtonStyles} isActive={pathname === RoutePath.terms()}>
           {translation(`routes.terms`)}
         </LinkButton>

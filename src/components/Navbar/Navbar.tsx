@@ -12,6 +12,7 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 import { LinksWrapper } from "../LinksWrapper/LinksWrapper";
 import { useMenu } from "../contexts/menu/Menu.context";
+import { AppMediaBreakpoints } from "../../constants/style.constants";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -24,13 +25,14 @@ export const intersectionOptions = {
 export function Navbar() {
   const { closeMenu } = useMenu();
   const { pathname, push } = useRouter();
+  const isTabletSize = pathname <= AppMediaBreakpoints.Tablet;
 
   const { t: translation } = useTranslation("common");
 
   const navbarRef = useRef<null | HTMLDivElement>(null);
 
   const handleLogo = () => {
-    closeMenu();
+    if (isTabletSize) closeMenu();
     const scrollToTop = async () => {
       window.scrollTo({
         top: 0,
@@ -49,7 +51,7 @@ export function Navbar() {
       }, 500);
     });
   };
-  //
+
   useEffect(() => {
     gsap.to(navbarRef.current, {
       background: "rgba(255, 255, 255, 0.5)",
@@ -62,7 +64,7 @@ export function Navbar() {
         scrub: 0.5,
       },
     });
-  }, []);
+  }, [pathname]);
 
   return (
     <div ref={navbarRef} className={styles.wrapper}>

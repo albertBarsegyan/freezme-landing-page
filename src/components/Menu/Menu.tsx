@@ -8,7 +8,7 @@ import { MenuIcon } from "../../icons/Menu.icon";
 import styles from "./Menu.module.css";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { CloseIcon } from "../../icons/Close.icon";
-import { MenuAnimationState, MenuInitialState, useMenu } from "../contexts/menu/Menu.context";
+import { MenuAnimationState, useMenu } from "../contexts/menu/Menu.context";
 import { useRouter } from "next/router";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -19,15 +19,21 @@ interface MenuProps {
 
 export function Menu({ children }: ComponentWithChildrenCallback<MenuProps>) {
   const menuRef = useRef<null | HTMLDivElement>(null);
-  const { menuVisibility, setMenuVisibility, toggleMenu } = useMenu();
+  const {
+    menuVisibility: { animationState, componentState },
+    setMenuVisibility,
+    toggleMenu,
+  } = useMenu();
   const { width } = useWindowSize();
   const { pathname } = useRouter();
 
   const isTabletSize = width <= AppMediaBreakpoints.Tablet;
 
+  console.log({ animation: animationState });
+
   useEffect(() => {
     if (isTabletSize) {
-      if (menuVisibility.animationState === MenuAnimationState.Start) {
+      if (animationState === MenuAnimationState.Start) {
         gsap.to(menuRef.current, {
           onStart: () => {
             document.documentElement.style.overflowY = "hidden";
@@ -38,11 +44,11 @@ export function Menu({ children }: ComponentWithChildrenCallback<MenuProps>) {
         });
       }
 
-      if (menuVisibility.animationState === MenuAnimationState.End) {
+      if (animationState === MenuAnimationState.End) {
         gsap.to(menuRef.current, {
           onComplete: () => {
             document.documentElement.style.overflowY = "auto";
-            setMenuVisibility((prev) => ({ ...prev, componentState: false }));
+            setMenuVisibility((prev) => ({ ...prev, componentState: false, animationState: MenuAnimationState.Idle }));
           },
           duration: AnimationSetting.Duration,
           opacity: 0,
@@ -53,20 +59,20 @@ export function Menu({ children }: ComponentWithChildrenCallback<MenuProps>) {
     return () => {
       document.documentElement.style.overflowY = "auto";
     };
-  }, [pathname, menuVisibility.animationState, menuVisibility.componentState, setMenuVisibility]);
+  }, [isTabletSize, animationState]);
 
-  useEffect(() => {
-    setMenuVisibility(MenuInitialState);
-  }, [pathname, setMenuVisibility]);
+  // useEffect(() => {
+  //   setMenuVisibility(MenuInitialState);
+  // }, [pathname]);
 
   return (
     <>
       {isTabletSize && (
         <PrimaryButton className={styles.menuButton} variant={ButtonVariant.TextPrimary} handleClick={toggleMenu}>
-          {menuVisibility.animationState === MenuAnimationState.Start ? <CloseIcon /> : <MenuIcon />}
+          {animationState === MenuAnimationState.Start ? <CloseIcon /> : <MenuIcon />}
         </PrimaryButton>
       )}
-      {(!isTabletSize || menuVisibility.componentState) && children({ menuRef })}
+      {(!isTabletSize || componentState) && children({ menuRef })}
     </>
   );
 }
