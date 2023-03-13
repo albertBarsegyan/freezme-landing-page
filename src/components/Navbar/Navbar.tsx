@@ -13,6 +13,7 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { LinksWrapper } from "../LinksWrapper/LinksWrapper";
 import { useMenu } from "../contexts/menu/Menu.context";
 import { AppMediaBreakpoints } from "../../constants/style.constants";
+import { useWindowSize } from "../../hooks/useWindowSize";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -25,7 +26,8 @@ export const intersectionOptions = {
 export function Navbar() {
   const { closeMenu } = useMenu();
   const { pathname, push } = useRouter();
-  const isTabletSize = pathname <= AppMediaBreakpoints.Tablet;
+  const { width } = useWindowSize();
+  const isTabletSize = width <= AppMediaBreakpoints.Tablet;
 
   const { t: translation } = useTranslation("common");
 
