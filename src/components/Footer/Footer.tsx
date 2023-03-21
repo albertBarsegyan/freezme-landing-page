@@ -2,8 +2,7 @@ import styles from "./Footer.module.css";
 import { RoutePath } from "../../constants/route.constants";
 
 import Link from "next/link";
-import { SocialMedia } from "../SocialMedia/SocialMedia";
-import { MailIcon, PhoneIcon, TargetIcon } from "../../icons/Contact.icon";
+import { MailIcon } from "../../icons/Contact.icon";
 import { ContactInformation } from "../../constants/information.constants";
 import { FreezMeIcon } from "../../icons/FreezMe.icon";
 import { LinksWrapper } from "../LinksWrapper/LinksWrapper";
@@ -13,24 +12,25 @@ import { LinkButton } from "../general/Button/Link/LinkButton";
 export function ContactDetails() {
   return (
     <div>
-      <div className={styles.contactInfoItem}>
-        <div className={styles.iconShape}>
-          <PhoneIcon />
-        </div>
-        <span>{ContactInformation.phone}</span>
-      </div>
+      {/*<div className={styles.contactInfoItem}>*/}
+      {/*  <div className={styles.iconShape}>*/}
+      {/*    <PhoneIcon />*/}
+      {/*  </div>*/}
+      {/*  <span>{ContactInformation.phone}</span>*/}
+      {/*</div>*/}
+
       <div className={styles.contactInfoItem}>
         <div className={styles.iconShape}>
           <MailIcon />
         </div>
         <span>{ContactInformation.email}</span>
       </div>
-      <div className={styles.contactInfoItem}>
-        <div className={styles.iconShape}>
-          <TargetIcon />
-        </div>
-        <span>{ContactInformation.place1}</span>
-      </div>
+      {/*<div className={styles.contactInfoItem}>*/}
+      {/*  <div className={styles.iconShape}>*/}
+      {/*    <TargetIcon />*/}
+      {/*  </div>*/}
+      {/*  <span>{ContactInformation.place1}</span>*/}
+      {/*</div>*/}
     </div>
   );
 }
@@ -45,7 +45,7 @@ export function Footer() {
           <FreezMeIcon />
         </Link>
 
-        <SocialMedia />
+        {/*<SocialMedia />*/}
 
         <div>
           <p className={styles.copyRight}>

@@ -28,7 +28,6 @@ export function Menu({ children }: ComponentWithChildrenCallback<MenuProps>) {
 
   const isTabletSize = width <= AppMediaBreakpoints.Tablet;
 
-  console.log({ animation: animationState });
 
   useEffect(() => {
     if (isTabletSize) {
