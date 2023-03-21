@@ -33,8 +33,8 @@ const Faqs = [
     key: 7,
     question: "Is it possible to share frozen media with others?",
     answer:
-      "Depending on the application, users may or may not be able to share the\n" +
-      "frozen media with others. Some applications may offer sharing features,\n" +
+      "Depending on the application, users may or may not be able to share the " +
+      "frozen media with others. Some applications may offer sharing features, " +
       "while others may not.",
   },
   {
@@ -47,22 +47,22 @@ const Faqs = [
     key: 9,
     question: "How does the freezing process work?",
     answer:
-      "The freezing process may depend on the application, but typically involves\n" +
+      "The freezing process may depend on the application, but typically involves " +
       "selecting photos or videos to be locked, setting the reveal date and time, and confirming the freezing. The application may use encryption or other security measures to ensure the media cannot be accessed before the reveal date.",
   },
   {
     key: 10,
     question: "Can I use the application to freeze media on multiple devices?",
     answer:
-      "This may depend on the application, but some may allow users to freeze\n" +
-      "media on multiple devices as long as the user is signed in to the same\n" +
+      "This may depend on the application, but some may allow users to freeze " +
+      "media on multiple devices as long as the user is signed in to the same " +
       "account on each device.",
   },
   {
     key: 11,
     question: "What happens if I forget the reveal date or want to change it?",
     answer:
-      "Depending on the application, users may be able to change the reveal date,\n" +
+      "Depending on the application, users may be able to change the reveal date, " +
       "but typically not after the freezing process has been confirmed. It's important to keep the reveal date in a safe and accessible place to avoid forgetting it.",
   },
 ];

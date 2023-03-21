@@ -18,7 +18,7 @@ export function Header() {
           </div>
 
           <div className={styles.textWrapper}>
-            <h1 className={styles.headText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h1>
+            <h1 className={styles.headText}>Your private emotion saved !)</h1>
             <p className={styles.headDescription}>
               FREEZME allows users to freeze photos and videos, revealing them on a specific date of their choosing is a
               unique and exciting concept. By offering personalization, anticipation, and the ability to relive precious
