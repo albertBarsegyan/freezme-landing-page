@@ -27,7 +27,7 @@ export function Header() {
             </p>
 
             <div style={{ marginTop: "40px" }}>
-              <a href={"https://apps.apple.com/us/app/overcast/id888422857"}>
+              <a href="https://apps.apple.com/app/freezme/id1661513334" target="_blank" rel="noreferrer">
                 <AppStoreIcon />
               </a>
             </div>
